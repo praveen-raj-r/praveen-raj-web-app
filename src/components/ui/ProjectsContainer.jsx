@@ -26,22 +26,24 @@ const projects = [
   },
 ];
 
-function CurrentProjects() {
+function ProjectsContainer({ landingPage = false }) {
   return (
     <section className="relative px-2 mt-4 md:py-4 md:mt-10">
-      <div className="flex items-center justify-between">
-        <h2 className="px-4 text-[14px] m-0 uppercase tracking-[2px] text-[#72788899] opacity-70">
-          Current Projects
-        </h2>
-        <div className="flex">
-          <Link
-            className="gradient sky-2 text-[#72788899] text-xs leading-3 font-semibold capitalize px-4 py-0"
-            to="/work"
-          >
-            All Works ▸
-          </Link>
+      {landingPage && (
+        <div className="flex items-center justify-between">
+          <h2 className="px-4 text-[14px] m-0 uppercase tracking-[2px] text-[#72788899] opacity-70">
+            Current Projects
+          </h2>
+          <div className="flex">
+            <Link
+              className="gradient sky-2 text-[#72788899] text-xs leading-3 font-semibold capitalize px-4 py-0"
+              to="/work"
+            >
+              All Works ▸
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-[10px] md:gap-[14px] mt-[6px] p-1">
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project}></ProjectItem>
@@ -51,4 +53,4 @@ function CurrentProjects() {
   );
 }
 
-export default CurrentProjects;
+export default ProjectsContainer;

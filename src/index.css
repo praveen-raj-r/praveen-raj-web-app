@@ -47,34 +47,30 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .sky-2 {
   background-color: #5c82ff;
-  background-image: linear-gradient(
-    90deg,
-    #80d0f2 0%,
-    #5c82ff 50%,
-    #c480ff 100%
-  );
+  background-image: linear-gradient(90deg,
+      #80d0f2 0%,
+      #5c82ff 50%,
+      #c480ff 100%);
 }
+
 .retro-1 {
   background-color: #1e76c9;
-  background-image: linear-gradient(
-    90.42deg,
-    #d400a5 0.58%,
-    #1e76c9 54.22%,
-    #35fced 100.26%
-  );
+  background-image: linear-gradient(90.42deg,
+      #d400a5 0.58%,
+      #1e76c9 54.22%,
+      #35fced 100.26%);
 }
 
 .retro-2 {
   background-color: #566cec;
-  background-image: linear-gradient(
-    90.42deg,
-    #4ab1f1 0.58%,
-    #566cec 37.22%,
-    #d749af 73.87%,
-    #ff7c51 112.26%
-  );
+  background-image: linear-gradient(90.42deg,
+      #4ab1f1 0.58%,
+      #566cec 37.22%,
+      #d749af 73.87%,
+      #ff7c51 112.26%);
 }
 
 .project-cards {
@@ -94,6 +90,7 @@
     border-radius: 20px;
   }
 }
+
 .project-cards:hover {
   transition: 333ms;
   border-color: transparent;
@@ -101,14 +98,13 @@
 
 .project-cards:hover::before {
   opacity: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(30, 28, 50, 0.8) 0%,
-    rgba(43, 22, 29, 0.7) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(30, 28, 50, 0.8) 0%,
+      rgba(43, 22, 29, 0.7) 100%);
   transition: 333ms;
   transform: scale(1);
 }
+
 .project-cards::before {
   content: "";
   border-radius: 16px;
@@ -123,11 +119,9 @@
 .greetings-card {
   position: relative;
   padding: 16px;
-  background: linear-gradient(
-    90deg,
-    rgba(30, 28, 50, 0.8) 0%,
-    rgba(43, 22, 29, 0.7) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(30, 28, 50, 0.8) 0%,
+      rgba(43, 22, 29, 0.7) 100%);
   display: flex;
   border-radius: 20px;
   margin: 60px 4px 4px;
