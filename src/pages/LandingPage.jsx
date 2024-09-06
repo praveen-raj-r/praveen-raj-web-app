@@ -1,5 +1,15 @@
+import CurrentProjects from "../components/ui/CurrentProjects";
+import Greeting from "../components/ui/Greeting";
+import Profile from "../components/ui/Profile";
+
 function LandingPage() {
-  return <div>home</div>;
+  return (
+    <>
+      <Profile />
+      <CurrentProjects />
+      <Greeting />
+    </>
+  );
 }
 
 export default LandingPage;
