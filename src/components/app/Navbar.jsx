@@ -7,7 +7,7 @@ import darkMoon from "/moon-dark-mode.svg";
 // import lightSon from "/sun-light-mode.svg";
 
 const navItems = [
-  { id: "1", label: "work", routePath: "/work", badge: 1, special: true },
+  { id: "1", label: "work", routePath: "/work", badge: 0, special: true },
   { id: "2", label: "about", routePath: "/about", badge: 0, special: false },
   { id: "3", label: "skills", routePath: "/skills", badge: 0, special: false },
   {
@@ -60,13 +60,16 @@ function Navbar() {
     </nav>
   );
 }
+
 function NavItem({ navItem }) {
   let { label, routePath, badge, special } = navItem;
   return (
     <li className="relative">
       <Link to={routePath}>
         <span
-          className={`pl-5 font-semibold ${special ? "gradient retro-2" : ""}`}
+          className={`pl-5 font-medium capitalize ${
+            special ? "gradient retro-2" : ""
+          }`}
         >
           {label}
         </span>
@@ -75,4 +78,5 @@ function NavItem({ navItem }) {
     </li>
   );
 }
+
 export default Navbar;

@@ -3,56 +3,145 @@
 @tailwind utilities;
 
 .main-container::before {
-    content: "";
-    position: absolute;
-    inset: 0px;
-    z-index: -100;
-    background-image: url(/header-gradient.svg), url(/footer-gradient.svg);
-    background-repeat: no-repeat;
-    background-position: center top, center bottom;
-    background-size: 1400px;
+  content: "";
+  position: absolute;
+  inset: 0px;
+  z-index: -100;
+  background-image: url(/header-gradient.svg), url(/footer-gradient.svg);
+  background-repeat: no-repeat;
+  background-position: center top, center bottom;
+  background-size: 1400px;
 }
 
 .nav-items-badge {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: red;
-    color: #fff;
-    font-size: 9px;
-    letter-spacing: -0.2px;
-    font-weight: 600;
-    border: 0.2px solid #0a0a0d;
-    height: 14px;
-    line-height: 11px;
-    padding-bottom: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
-    border-radius: 5px;
-    text-align: center;
-    transform: translateY(-0.6px);
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    vertical-align: middle;
-    -webkit-box-pack: center;
-    justify-content: center;
-    background-clip: unset;
-    -webkit-text-fill-color: unset;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: red;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  border: 0.2px solid #0a0a0d;
+  height: 14px;
+  line-height: 11px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+  text-align: center;
+  transform: translateY(-0.6px);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
 .gradient {
-    background-size: 100%;
-    background-repeat: repeat;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sky-2 {
+  background-color: #5c82ff;
+  background-image: linear-gradient(
+    90deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+}
+.retro-1 {
+  background-color: #1e76c9;
+  background-image: linear-gradient(
+    90.42deg,
+    #d400a5 0.58%,
+    #1e76c9 54.22%,
+    #35fced 100.26%
+  );
 }
 
 .retro-2 {
-    background-color: #566cec;
-    background-image: linear-gradient(90.42deg,
-            #4ab1f1 0.58%,
-            #566cec 37.22%,
-            #d749af 73.87%,
-            #ff7c51 112.26%);
+  background-color: #566cec;
+  background-image: linear-gradient(
+    90.42deg,
+    #4ab1f1 0.58%,
+    #566cec 37.22%,
+    #d749af 73.87%,
+    #ff7c51 112.26%
+  );
+}
+
+.project-cards {
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .project-cards {
+    display: flex;
+    justify-content: left;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+}
+.project-cards:hover {
+  transition: 333ms;
+  border-color: transparent;
+}
+
+.project-cards:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+  transition: 333ms;
+  transform: scale(1);
+}
+.project-cards::before {
+  content: "";
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.greetings-card {
+  position: relative;
+  padding: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+  display: flex;
+  border-radius: 20px;
+  margin: 60px 4px 4px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.chatImg {
+  height: 320px;
+  margin-right: -10px;
+  transform: scale(1.2) translateY(18px);
+  z-index: -1;
+}
+
+.design-pur {
+  background-image: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
 }
