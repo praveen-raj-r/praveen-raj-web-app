@@ -24,7 +24,7 @@ function Footer() {
         </div>
 
         <div className="px-0 py-1 mb-5">
-          <ul className="flex items-center justify-center m-0">
+          <ul className="flex flex-wrap items-center justify-center px-6 m-0 md:flex-nowrap md:p-0">
             {links.map((link) => (
               <FooterLink key={link.id} link={link} />
             ))}
