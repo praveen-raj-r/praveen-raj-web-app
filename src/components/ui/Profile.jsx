@@ -1,10 +1,12 @@
 import arrowUp from "/arrow-up.svg";
-
+import praveenraj from "/praveen.png";
 function Profile() {
   return (
     <section className="relative px-4 pt-4">
       <div className="flex">
-        <div className="size-[90px] relative mb-3"></div>
+        <div className="size-[90px] relative mb-3">
+          <img className="rounded-[50%]" src={praveenraj} alt="" />
+        </div>
         <div className="flex flex-col ml-4">
           <h1 className="flex text-2xl">praveen raj</h1>
           <a

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
-import logo from "/realPraveen-logo.svg";
-import linkedIn from "/linkedin.svg";
-import github from "/github.svg";
-import darkMoon from "/moon-dark-mode.svg";
+import Logo from "../ui/Logo";
+import NavSocialLinks from "../ui/NavSocialLinks";
 // import lightSon from "/sun-light-mode.svg";
 
 const navItems = [
@@ -23,12 +21,8 @@ function Navbar() {
   return (
     <nav className="backdrop-blur-[44px] relative z-10 w-full bg-[#1c162f4d] px-4 py-[10px] rounded-xl flex justify-between">
       <div className="flex items-center max-h-10">
-        <div className="flex items-center max-h-10 p-0 scale-[0.92]">
-          <Link to="/">
-            <img src={logo} />
-          </Link>
-        </div>
-        <div className="relative flex items-center ml-2 max-h-10">
+        <Logo />
+        <div className="relative items-center hidden ml-2 md:flex max-h-10">
           <ul className="flex">
             {navItems.map((navItem) => (
               <NavItem key={navItem.id} navItem={navItem} />
@@ -36,27 +30,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <div className="flex items-center max-h-10">
-        <div className="flex items-center max-h-10 border-r border-[#ffffff1a] mr-3">
-          <a
-            target="_blank"
-            className="leading-[0px] py-[2px] px-3"
-            href="https://www.linkedin.com/in/developer-praveen-raj/"
-          >
-            <img src={linkedIn} />
-          </a>
-          <a
-            target="_blank"
-            className="leading-[0px] py-[2px] px-3"
-            href="https://github.com/praveen-raj-r"
-          >
-            <img src={github} />
-          </a>
-        </div>
-        <div className="flex items-center max-h-10">
-          <img src={darkMoon} />
-        </div>
-      </div>
+      <NavSocialLinks />
     </nav>
   );
 }
