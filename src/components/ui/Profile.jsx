@@ -21,9 +21,7 @@ function Profile() {
       </div>
       <div>
         <p className="text-xl leading-[140%] font-normal my-4 mx-0">
-          A wizard who loves design and code. I tell stories through my designs
-          and illustrations. I spend most of my time designing for brands and
-          creating design resources and tools. And now, making my own game.
+         As a software engineer specializing in frontend development, I bridge the gap between design and technology to craft exceptional user experiences. I focus on building intuitive, performant, and visually striking interfaces, transforming complex concepts into seamless digital interactions. With a passion for innovation, I harness the latest technologies to deliver solutions that are not just functional but also inspiring.
         </p>
         <h4>Building what I love.</h4>
       </div>
