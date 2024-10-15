@@ -15,7 +15,13 @@ function Greeting() {
           >
             praveen1220raj@gmail.com
           </a>
-          <a className="gradient retro-2">@realPraveen</a>
+          <a
+            href="https://www.instagram.com/real_praveenraj/"
+            target="_blank"
+            className="gradient retro-2"
+          >
+            @real_praveenraj
+          </a>
         </div>
 
         <p className="sm:text-lg font-normal sm:leading-[120%] my-5 mx-0 tracking-wide opacity-80 max-w-[340px]">

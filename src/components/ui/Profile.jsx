@@ -13,10 +13,10 @@ function Profile() {
           </h1>
           <a
             className="py-[6px] px-0 font-semibold text-lg gradient retro-2 tracking-widest"
-            href=""
+            href="https://www.instagram.com/real_praveenraj/"
             target="_blank"
           >
-            @realpraveen
+            @real_praveenraj
           </a>
         </div>
       </div>
