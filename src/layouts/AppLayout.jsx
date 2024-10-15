@@ -4,7 +4,7 @@ import Footer from "../components/app/Footer";
 
 function AppLayout() {
   return (
-    <div className="relative z-[1] bg-[#0A0A0D] main-container text-white">
+    <div className="relative z-[1] bg-[#0A0A0D] main-container text-white font-mono">
       <div className="max-w-[708px] mx-auto pt-6 ">
         <Navbar />
         <main className="mt-10">
