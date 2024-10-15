@@ -19,7 +19,7 @@ const navItems = [
 
 function Navbar() {
   return (
-    <nav className="backdrop-blur-[44px] relative z-10 w-full bg-[#1c162f4d] px-4 py-[10px] rounded-xl flex justify-between">
+    <nav className="backdrop-blur-[44px] sticky top-6 z-10 w-full bg-[#1c162f4d] px-4 py-[10px] rounded-xl flex justify-between">
       <div className="flex items-center max-h-10">
         <Logo />
         <div className="relative items-center hidden ml-2 md:flex max-h-10">
