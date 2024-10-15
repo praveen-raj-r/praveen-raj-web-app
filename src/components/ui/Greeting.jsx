@@ -1,23 +1,27 @@
 import chat from "/chat.png";
+
 function Greeting() {
   return (
-    <section className="greetings-card">
-      <div className="z-10 p-8">
-        <h2 className="gradient retro-2 inline-block text-5xl leading-[-1px] ">
+    <section className="flex flex-col-reverse items-center gap-10 p-4 mx-5 md:gap-0 md:flex-row greetings-card">
+      <div className="z-10 p-2 md:p-8">
+        <h1 className="gradient retro-2 text-4xl md:text-5xl leading-[-1px] font-bold text-center md:text-left">
           Say hi!
-        </h2>
-        <div className="flex mt-3 space-x-6">
+        </h1>
+
+        <div className="flex flex-col mt-3 space-x-0 text-center md:space-x-6 md:flex-row">
           <a className="gradient retro-2" href="">
-            praveen@gmail.com
+            praveen1220raj@gmail.com
           </a>
           <a className="gradient retro-2" href="">
             @realPraveen
           </a>
         </div>
-        <p className="text-xl font-normal leading-[140%] my-5 mx-0 tracking-[-0.3px] opacity-80 max-w-[340px]">
+
+        <p className="sm:text-lg font-normal sm:leading-[120%] my-5 mx-0 tracking-wide opacity-80 max-w-[340px]">
           Want to create something awesome? Or, you have any query? Drop an
           email or tweet.
         </p>
+
         <div className="flex justify-start m-0 text-left">
           <ul className="flex ">
             <li className="m-0">
@@ -31,8 +35,9 @@ function Greeting() {
           </ul>
         </div>
       </div>
+
       <div className="z-10 text-right">
-        <img className="chatImg" src={chat} />
+        <img className="chatImg h-[220px] md:h-[320px]" src={chat} />
       </div>
     </section>
   );

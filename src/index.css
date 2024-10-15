@@ -122,21 +122,15 @@
 
 .greetings-card {
   position: relative;
-  padding: 16px;
   background: linear-gradient(
     90deg,
     rgba(30, 28, 50, 0.8) 0%,
     rgba(43, 22, 29, 0.7) 100%
   );
-  display: flex;
   border-radius: 20px;
-  margin: 60px 4px 4px;
-  -webkit-box-align: center;
-  align-items: center;
 }
 
 .chatImg {
-  height: 320px;
   margin-right: -10px;
   transform: scale(1.2) translateY(18px);
   z-index: -1;
