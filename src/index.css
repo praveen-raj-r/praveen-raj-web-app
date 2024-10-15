@@ -130,12 +130,6 @@
   border-radius: 20px;
 }
 
-.chatImg {
-  margin-right: -10px;
-  transform: scale(1.2) translateY(18px);
-  z-index: -1;
-}
-
 .design-pur {
   background-image: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
 }
