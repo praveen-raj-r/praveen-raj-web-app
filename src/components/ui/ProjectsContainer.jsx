@@ -1,28 +1,22 @@
-import { Link } from "react-router-dom";
-import projectImgs from "/3dicons.png";
+import { Link } from "react-router-dom"; 
+import evergreenEscapesLogo from "/evergreen-escapes.png";
+import shortenrLogo from "/shortenr.png";
 import ProjectItem from "./ProjectItem";
 
 const projects = [
   {
     id: "1",
-    img: projectImgs,
-    header: "3dicons",
-    description: "Beautifully Crafted Open-source 3dicons library",
-    hrefUrl: "",
+    img: evergreenEscapesLogo,
+    header: "Evergreen Escapes",
+    description: "Beautifully Crafted Cabin Booking Website",
+    hrefUrl: "https://evergreen-escapes.vercel.app/",
   },
   {
     id: "2",
-    img: projectImgs,
-    header: "3dicons",
-    description: "Beautifully Crafted Open-source 3dicons library",
-    hrefUrl: "",
-  },
-  {
-    id: "3",
-    img: projectImgs,
-    header: "3dicons",
-    description: "Beautifully Crafted Open-source 3dicons library",
-    hrefUrl: "",
+    img: shortenrLogo,
+    header: "Shortenr App",
+    description: "The only URL Shortener you'll ever need! ",
+    hrefUrl: "https://shortenr-app.vercel.app/",
   },
 ];
 
