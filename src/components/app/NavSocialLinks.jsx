@@ -47,7 +47,7 @@ function NavIcon({ item }) {
     return (
       <Sheet>
         <SheetTrigger>
-          <span>{item.icon}</span>
+          <span className="md:hidden">{item.icon}</span>
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
