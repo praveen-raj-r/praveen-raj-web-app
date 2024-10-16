@@ -1,5 +1,5 @@
-import Description from "../components/ui/Description";
-import ProjectsContainer from "../components/ui/ProjectsContainer";
+import Description from "../components/app/Description";
+import ProjectsContainer from "../components/app/ProjectsContainer";
 
 function Projects() {
   return (

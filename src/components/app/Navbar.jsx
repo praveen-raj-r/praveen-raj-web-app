@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Logo from "../ui/Logo";
-import NavSocialLinks from "../ui/NavSocialLinks";
+import Logo from "./Logo";
+import NavSocialLinks from "./NavSocialLinks";
 // import lightSon from "/sun-light-mode.svg";
 
 const navItems = [

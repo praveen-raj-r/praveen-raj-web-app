@@ -1,4 +1,4 @@
-import { FooterDesignLeft, FooterDesignRight } from "../ui/FooterDesigns";
+import { FooterDesignLeft, FooterDesignRight } from "./FooterDesigns";
 // import FooterLink from "../ui/FooterLink";
 
 // const links = [

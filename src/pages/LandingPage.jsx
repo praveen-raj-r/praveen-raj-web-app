@@ -1,6 +1,6 @@
-import ProjectsContainer from "../components/ui/ProjectsContainer";
-import Greeting from "../components/ui/Greeting";
-import Profile from "../components/ui/Profile";
+import ProjectsContainer from "../components/app/ProjectsContainer";
+import Greeting from "../components/app/Greeting";
+import Profile from "../components/app/Profile";
 
 function LandingPage() {
   return (

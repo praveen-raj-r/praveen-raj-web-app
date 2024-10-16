@@ -1,4 +1,4 @@
-import Description from "../components/ui/Description";
+import Description from "../components/app/Description";
 import BannerImgDesk from "/banner.png";
 import BannerImgMobile from "/bannerMobile.png";
 
