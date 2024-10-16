@@ -1,15 +1,5 @@
-// import linkedIn from "/linkedin.svg";
-// import github from "/github.svg";
-// import darkMoon from "/moon-dark-mode.svg";
 import { Github, Linkedin, Menu, Moon } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import Sidebar from "./Sidebar";
 
 const size = 18;
 
@@ -43,23 +33,7 @@ function NavSocialLinks() {
 }
 
 function NavIcon({ item }) {
-  if (item.toggleSideBar)
-    return (
-      <Sheet>
-        <SheetTrigger>
-          <span className="md:hidden">{item.icon}</span>
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
-    );
+  if (item.toggleSideBar) return <Sidebar item={item} />;
   if (item.link)
     return (
       <span
