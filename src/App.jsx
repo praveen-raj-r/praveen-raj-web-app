@@ -8,7 +8,7 @@ import Skills from "./pages/Skills";
 import TimeLine from "./pages/TimeLine";
 import Stack from "./pages/Stack";
 import Thanks from "./pages/Thanks";
-import Books from "./pages/books";
+import Books from "./pages/Books";
 import Links from "./pages/Links";
 
 const router = createBrowserRouter([
