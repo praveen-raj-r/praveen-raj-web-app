@@ -6,6 +6,7 @@ import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import TimeLine from "./pages/TimeLine";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path: "/timeline",
+        element: <TimeLine />,
       },
       {
         path: "/about",

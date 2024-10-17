@@ -5,11 +5,18 @@ import NavSocialLinks from "./NavSocialLinks";
 // import lightSon from "/sun-light-mode.svg";
 
 const navItems = [
-  { id: "1", label: "work", routePath: "/work", badge: 0, special: true },
-  { id: "2", label: "about", routePath: "/about", badge: 0, special: false },
-  { id: "3", label: "skills", routePath: "/skills", badge: 0, special: false },
   {
-    id: "4",
+    id: "1",
+    label: "timeline",
+    routePath: "/timeline",
+    badge: 0,
+    special: true,
+  },
+  { id: "2", label: "work", routePath: "/work", badge: 0, special: true },
+  { id: "3", label: "about", routePath: "/about", badge: 0, special: false },
+  { id: "4", label: "skills", routePath: "/skills", badge: 0, special: false },
+  {
+    id: "5",
     label: "contact",
     routePath: "/contact",
     badge: 0,

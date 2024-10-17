@@ -196,3 +196,83 @@
 .design-pur {
   background-image: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
 }
+
+.orange {
+  background: linear-gradient(
+    270deg,
+    rgb(251, 206, 255) 0%,
+    rgb(255, 209, 209) 100%
+  );
+  color: rgba(208, 0, 166, 0.8);
+}
+
+.purple {
+  background: linear-gradient(
+    270deg,
+    rgb(240, 214, 255) 0%,
+    rgb(211, 205, 255) 100%
+  );
+  color: rgba(92, 27, 174, 0.8);
+}
+
+.design-dot::before {
+  background: linear-gradient(
+    270deg,
+    rgb(195, 193, 255) 0%,
+    rgb(162, 193, 255) 100%
+  );
+  border: 1px solid var(--border-line);
+  content: "";
+  display: block;
+  float: left;
+  height: 10px;
+  left: -7px;
+  position: absolute;
+  top: -0.125rem;
+  width: 10px;
+  border-radius: 12px;
+}
+
+.design-hover-before::before {
+  content: "";
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.yellow {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 213, 102) 0%,
+    rgb(255, 248, 230) 100%
+  );
+  color: rgba(223, 93, 9, 0.8);
+}
+
+.green {
+  background: linear-gradient(
+    90deg,
+    rgb(216, 249, 187) 0%,
+    rgb(253, 248, 204) 100%
+  );
+  color: rgba(60, 132, 0, 0.8);
+}
+.design-hover-before:hover {
+  transition: 333ms;
+  border-color: transparent;
+}
+
+.design-hover-before:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+  transition: 333ms;
+  transform: scale(1);
+}

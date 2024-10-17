@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 
 const navItems = [
   {
+    label: "timeline",
+    link: "/timeline",
+  },
+  {
     label: "work",
     link: "/work",
   },

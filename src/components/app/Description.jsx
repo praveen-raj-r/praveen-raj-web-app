@@ -7,7 +7,7 @@ function Description({ header, children }) {
         {header}
       </h2>
       <p className="tracking-[-0.28px] leading-[140%] text-lg">{children}</p>
-      <div className="flex items-center justify-center mx-0 my-3">
+      <div className="flex items-center justify-center mx-0 mt-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="124"
