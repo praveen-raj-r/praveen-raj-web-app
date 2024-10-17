@@ -26,43 +26,23 @@ const navItems = [
     link: "/skills",
   },
   {
-    label: "contact",
-    link: "/contact",
-  },
-  {
-    label: "timeline",
-    link: "",
-  },
-  {
-    label: "story",
-    link: "",
-  },
-  {
-    label: "tips",
-    link: "",
-  },
-  {
     label: "links",
-    link: "",
+    link: "/links",
   },
   {
     label: "supporters",
-    link: "",
+    link: "/thanks",
   },
   {
-    label: "bookshelf",
-    link: "",
+    label: "Bookshelf",
+    link: "/books",
   },
   {
-    label: "tech stack",
-    link: "",
+    label: "Tech Stack",
+    link: "/stack",
   },
   {
     label: "photos",
-    link: "",
-  },
-  {
-    label: "versions",
     link: "",
   },
 ];

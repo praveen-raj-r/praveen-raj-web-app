@@ -5,8 +5,11 @@ import LandingPage from "./pages/LandingPage";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
-import Contact from "./pages/Contact";
 import TimeLine from "./pages/TimeLine";
+import Stack from "./pages/Stack";
+import Thanks from "./pages/Thanks";
+import Books from "./pages/books";
+import Links from "./pages/Links";
 
 const router = createBrowserRouter([
   {
@@ -33,8 +36,20 @@ const router = createBrowserRouter([
         element: <Skills />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/stack",
+        element: <Stack />,
+      },
+      {
+        path: "/thanks",
+        element: <Thanks />,
+      },
+      {
+        path: "/books",
+        element: <Books />,
+      },
+      {
+        path: "/links",
+        element: <Links />,
       },
     ],
   },
