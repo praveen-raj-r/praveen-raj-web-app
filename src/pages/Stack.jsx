@@ -142,13 +142,15 @@ function ListContainer({ gridStatus }) {
       </h2>
       <div
         className={`${
-          gridStatus ? "grid-cols-5" : "max-w-[500px] grid-cols-1"
+          gridStatus
+            ? " grid-cols-4 sm:grid-cols-5"
+            : "max-w-[500px] grid-cols-1"
         } relative grid mx-auto mt-3 mb-0 w-fit transition-[0.25s] p-1 gap-2`}
       >
         {stacks.map((item, i) => {
           return (
             <a
-              className="relative flex items-center p-4 m-0 cursor-pointer "
+              className="relative flex items-center p-3 m-0 cursor-pointer sm:p-4 "
               key={`techstack-app-${i}`}
               href={item.link}
             >
@@ -162,7 +164,7 @@ function ListContainer({ gridStatus }) {
               <div
                 className={`${
                   gridStatus ? "hidden" : ""
-                } flex gap-4 design-hover-before`}
+                } flex gap-4 design-hover-before items-center`}
               >
                 <img className="size-24" src={item.img} alt="" />
 
