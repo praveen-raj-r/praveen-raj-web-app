@@ -9,10 +9,12 @@ import spotify from "/spotify.png";
 import visualStudio from "/visualStudio.png";
 import discord from "/discord.png";
 import slack from "/slack.png";
-import bootstrap from "/bootstrap.png";
 import tailwindCss from "/tailwindCss.png";
 import react from "/react.png";
 import vercel from "/vercel.png";
+import github from "/github.png";
+import nextjs from "/nextjs.png";
+import stackoverflow from "/stackoverflow.png";
 
 function Stack() {
   const [gridStatus, setGridStatus] = useState(true);
@@ -95,20 +97,12 @@ const stacks = [
       "Slack brings team communication and collaboration into one place so you can get more work done.",
   },
   {
-    title: "Bootstrap",
-    label: "Development",
-    link: "https://slack.com/intl/en-in/",
-    img: bootstrap,
-    description:
-      "Slack brings team communication and collaboration into one place so you can get more work done.",
-  },
-  {
     title: "Tailwind CSS",
     label: "Development",
     link: "https://slack.com/intl/en-in/",
     img: tailwindCss,
     description:
-      "Slack brings team communication and collaboration into one place so you can get more work done.",
+      "Tailwind CSS is the only framework that I've seen scale on large teams. It’s easy to customize, adapts to any design, and the build size is tiny.",
   },
   {
     title: "react",
@@ -116,24 +110,42 @@ const stacks = [
     link: "https://react.dev/",
     img: react,
     description:
-      "Slack brings team communication and collaboration into one place so you can get more work done.",
+      "React is my go-to for crafting sleek, dynamic UIs with reusable components and lightning-fast updates.",
   },
   {
-    title: "vercel",
-    label: "Development",
+    title: "Vercel",
+    label: "Hosting",
     link: "https://react.dev/",
     img: vercel,
     description:
-      "Slack brings team communication and collaboration into one place so you can get more work done.",
+      "It offers a seamless development experience. Started using recently for all my projects.",
+  },
+  {
+    title: "Github",
+    label: "Development",
+    link: "https://github.com/",
+    img: github,
+    description:
+      "GitHub is my go-to for code collaboration, version control, and contributing to open-source projects.",
+  },
+  {
+    title: "Next.js",
+    label: "Development",
+    link: "https://nextjs.org/",
+    img: nextjs,
+    description:
+      "I love how Next.js simplifies complex workflows like server-side rendering and API routes. ",
+  },
+  {
+    title: "stackoverflow",
+    label: "Development",
+    link: "https://stackoverflow.com/",
+    img: stackoverflow,
+    description:
+      "Stack Overflow has been key to my development journey, offering unmatched support and fast solutions.",
   },
 ];
 
-// 1. Vercel
-// 3. Next.js
-// 4. Redux
-// 5. React .JS
-// 6. Tailwind css
-// 7. bootstrap
 function ListContainer({ gridStatus }) {
   return (
     <>
