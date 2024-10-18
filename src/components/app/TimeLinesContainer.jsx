@@ -11,13 +11,16 @@ function TimeLinesContainer({ timelines }) {
 function TimeLineItem({ item }) {
   return (
     <div className="relative w-full mx-auto my-0 cursor-pointer">
-      <a className="flex justify-center px-2" href="">
-        <div className="min-w-[100px] max-w-[100px] mr-5 -mt-1">
+      <a className="flex px-2 pl-4 sm:justify-center" href="">
+        <div className="min-w-[100px] max-w-[100px] mr-5 -mt-1 hidden sm:block">
           <p className="text-sm font-semibold text-right">{item.range}</p>
         </div>
         <div className="w-auto sm:w-[420px] relative pl-4 pb-12 border-l border-[#ecedee26] design-dot">
           <div className="relative">
             <div className="flex flex-col p-3 -translate-y-5 design-hover-before">
+              <p className="pb-3 text-sm font-semibold text-left sm:hidden ">
+                {item.range}
+              </p>
               <div>
                 {item.label.map((i, j) => (
                   <div
@@ -28,7 +31,7 @@ function TimeLineItem({ item }) {
                   </div>
                 ))}
               </div>
-              <h3 className="mx-0 my-2 text-lg">{item.title}</h3>
+              <h3 className="mx-0 my-2 text-lg font-[900]">{item.title}</h3>
               <p className="text-[15px] leading-[140%] tracking-[-0.18px] mb-3 opacity-90">
                 {item.desc}
               </p>

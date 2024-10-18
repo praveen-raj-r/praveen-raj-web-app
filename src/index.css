@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,6 +66,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 .main-container::before {
   content: "";
   position: absolute;
@@ -110,6 +112,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .sky-2 {
   background-color: #5c82ff;
   background-image: linear-gradient(
@@ -119,6 +122,7 @@
     #c480ff 100%
   );
 }
+
 .retro-1 {
   background-color: #1e76c9;
   background-image: linear-gradient(
@@ -157,6 +161,7 @@
     border-radius: 20px;
   }
 }
+
 .project-cards:hover {
   transition: 333ms;
   border-color: transparent;
@@ -197,24 +202,6 @@
   background-image: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
 }
 
-.orange {
-  background: linear-gradient(
-    270deg,
-    rgb(251, 206, 255) 0%,
-    rgb(255, 209, 209) 100%
-  );
-  color: rgba(208, 0, 166, 0.8);
-}
-
-.purple {
-  background: linear-gradient(
-    270deg,
-    rgb(240, 214, 255) 0%,
-    rgb(211, 205, 255) 100%
-  );
-  color: rgba(92, 27, 174, 0.8);
-}
-
 .design-dot::before {
   background: linear-gradient(
     270deg,
@@ -244,6 +231,40 @@
   transform: scale(0.8);
 }
 
+.design-hover-before:hover {
+  transition: 333ms;
+  border-color: transparent;
+}
+
+.design-hover-before:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+  transition: 333ms;
+  transform: scale(1);
+}
+
+.orange {
+  background: linear-gradient(
+    270deg,
+    rgb(251, 206, 255) 0%,
+    rgb(255, 209, 209) 100%
+  );
+  color: rgba(208, 0, 166, 0.8);
+}
+
+.purple {
+  background: linear-gradient(
+    270deg,
+    rgb(240, 214, 255) 0%,
+    rgb(211, 205, 255) 100%
+  );
+  color: rgba(92, 27, 174, 0.8);
+}
+
 .yellow {
   background: linear-gradient(
     90deg,
@@ -261,18 +282,21 @@
   );
   color: rgba(60, 132, 0, 0.8);
 }
-.design-hover-before:hover {
-  transition: 333ms;
-  border-color: transparent;
+
+.blue {
+  background: linear-gradient(
+    270deg,
+    rgb(229, 228, 255) 0%,
+    rgb(220, 232, 255) 100%
+  );
+  color: rgba(7, 4, 138, 0.7);
 }
 
-.design-hover-before:hover::before {
-  opacity: 1;
+.red {
   background: linear-gradient(
     90deg,
-    rgba(30, 28, 50, 0.8) 0%,
-    rgba(43, 22, 29, 0.7) 100%
+    rgb(255, 196, 196) 0%,
+    rgb(255, 231, 231) 100%
   );
-  transition: 333ms;
-  transform: scale(1);
+  color: rgba(211, 0, 0, 0.7);
 }

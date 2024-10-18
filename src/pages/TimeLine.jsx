@@ -20,7 +20,14 @@ const socialLinksContent = [
 ];
 const timelines = [
   {
-    range: "2015 - 2016",
+    range: "2012",
+    label: [{ text: "first", class: "green" }],
+    title: "Hello World!",
+    desc: "First time I started using computer",
+    img: "",
+  },
+  {
+    range: "May 31, 2016",
     label: [
       { text: "education", class: "yellow" },
       { text: "SSLC", class: "green" },
@@ -28,10 +35,9 @@ const timelines = [
     title: "SSLC",
     desc: "Studied @ Swami Vivekananda Maticulation Hr. Sec. School and Secured 91%",
     img: "",
-    class: "yellow",
   },
   {
-    range: "2017 - 2018",
+    range: "May 15, 2018",
     label: [
       { text: "education", class: "yellow" },
       { text: "HSC", class: "green" },
@@ -39,26 +45,40 @@ const timelines = [
     title: "HSC",
     desc: "Studied @ Swami Vivekananda Maticulation Hr. Sec. School and Secured 60.75%",
     img: "",
-    class: "purple",
   },
   {
-    range: "2018 - 2022",
+    range: "Aug 31, 2018",
     label: [
-      { text: "education", class: "yellow" },
-      { text: "graduate", class: "green" },
+      { text: "education", class: "green" },
+      { text: "starting", class: "purple" },
     ],
     title: "B.E. Electrical And Electronics Engineering",
-    desc: "Grudated from Meenakshi College Of Engineering and Secured 8.15 CGPA",
+    desc: "Excited to join Meenakshi College of Engineering for undergraduate degree",
     img: "",
-    class: "yellow",
   },
   {
-    range: "May 2023 - present",
-    label: [{ text: "work", class: "orange" }],
-    title: "LCS Controls Private Limited.",
-    desc: "Working as a Frontend Engineer",
+    range: "Sep 31, 2022",
+    label: [
+      { text: "education", class: "green" },
+      { text: "graduation", class: "yellow" },
+    ],
+    title: "B.E. Electrical And Electronics Engineering",
+    desc: "Graduated from Meenakshi College of Engineering, achieving a CGPA of 8.16.",
     img: "",
-    class: "green",
+  },
+  {
+    range: "May 03, 2023",
+    label: [{ text: "job", class: "orange" }],
+    title: "Joined LCS Controls Private Limited.",
+    desc: "Excited to join LCS as a Frontend Engineer",
+    img: "",
+  },
+  {
+    range: "Oct 31, 2024",
+    label: [{ text: "happy", class: "red" }],
+    title: "praveen-raj.vercel.app",
+    desc: "Published my first Personal Website",
+    img: "",
   },
 ];
 
@@ -66,9 +86,10 @@ function TimeLine() {
   return (
     <>
       <Description header="Timeline">
-        The linear view of some milestones and notable moments that happened so
-        far ({timelines.length} key moments). And you can always find more
-        information on LinkedIn.
+        &quot;Explore a streamlined timeline of {timelines.length} pivotal
+        milestones and standout achievements that have shaped my journey so far.
+        For further insights and a comprehensive view of my professional path,
+        visit my LinkedIn profile.&quot;
       </Description>
       <div className="flex justify-center gap-10">
         {socialLinksContent.map((item, i) => (
