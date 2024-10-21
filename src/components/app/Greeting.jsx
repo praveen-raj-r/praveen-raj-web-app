@@ -26,13 +26,16 @@ function Greeting() {
 
         <p className="sm:text-lg font-normal sm:leading-[120%] my-5 mx-0 tracking-wide opacity-80 max-w-[340px]">
           Want to create something awesome? Or, you have any query? Drop an
-          email or tweet.
+          email.
         </p>
 
         <div className="flex justify-start m-0 text-left">
           <ul className="flex ">
             <li className="m-0">
-              <a className="rounded-[18px] flex items-center font-medium text-base leading-5 relative text-white py-2 px-5 design-pur">
+              <a
+                href="mailto:praveen1220raj@gmail.com"
+                className="rounded-[18px] flex items-center font-medium text-base leading-5 relative text-white py-2 px-5 design-pur"
+              >
                 Send Work Proposal
               </a>
             </li>
