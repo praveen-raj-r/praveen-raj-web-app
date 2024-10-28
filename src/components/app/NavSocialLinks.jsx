@@ -25,8 +25,8 @@ const contents = [
 function NavSocialLinks() {
   return (
     <div className="flex items-center gap-4">
-      {contents.map((item) => (
-        <NavIcon key={item} item={item}></NavIcon>
+      {contents.map((item, k) => (
+        <NavIcon key={`nav-icon-${k}`} item={item}></NavIcon>
       ))}
     </div>
   );
@@ -37,9 +37,8 @@ function NavIcon({ item }) {
   if (item.link)
     return (
       <span
-        className={`${
-          item.rightBorder ? "border-r-2 border-[#ffffff1a] pr-2" : ""
-        }`}
+        className={`${item.rightBorder ? "border-r-2 border-[#ffffff1a] pr-2" : ""
+          }`}
       >
         <a target="_blank" href={item.link}>
           {item.icon}

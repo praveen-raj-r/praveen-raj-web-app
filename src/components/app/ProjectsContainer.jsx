@@ -1,25 +1,6 @@
 import { Link } from "react-router-dom";
-// import projectImgs from "/3dicons.png";
-import evergreenEscapesLogo from "/evergreen-escapes.png";
-import shortenrLogo from "/shortenr.png";
 import ProjectItem from "./ProjectItem";
-
-const projects = [
-  {
-    id: "1",
-    img: evergreenEscapesLogo,
-    header: "Evergreen Escapes",
-    description: "Beautifully Crafted Cabin Booking Website",
-    hrefUrl: "https://evergreen-escapes.vercel.app/",
-  },
-  {
-    id: "2",
-    img: shortenrLogo,
-    header: "Shortenr App",
-    description: "The only URL Shortener you'll ever need! ",
-    hrefUrl: "https://shortenr-app.vercel.app/",
-  },
-];
+import projects from "@/data/projects";
 
 function ProjectsContainer({ landingPage = false }) {
   return (
@@ -40,8 +21,8 @@ function ProjectsContainer({ landingPage = false }) {
         </div>
       )}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-[10px] md:gap-[14px] mt-[6px] p-1">
-        {projects.map((project) => (
-          <ProjectItem key={project.id} project={project}></ProjectItem>
+        {projects.map((project, id) => (
+          <ProjectItem key={`project-${id}`} project={project}></ProjectItem>
         ))}
       </div>
     </section>

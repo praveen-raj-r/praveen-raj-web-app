@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "img": "/evergreen-escapes.png",
+        "header": "Evergreen Escapes",
+        "description": "Beautifully Crafted Cabin Booking Website",
+        "hrefUrl": "https://evergreen-escapes.vercel.app/"
+    },
+    {
+        "id": "2",
+        "img": "/shortenr.png",
+        "header": "Shortenr App",
+        "description": "The only URL Shortener you'll ever need! ",
+        "hrefUrl": "https://shortenr-app.vercel.app/"
+    },
+    {
+        "id": "3",
+        "img": "/shortenr.png",
+        "header": "Eventify",
+        "description": "Simplify Your Events Scheduling",
+        "hrefUrl": "https://eventify-web-app.vercel.app/"
+    },
+    {
+        "id": "4",
+        "img": "/shortenr.png",
+        "header": "Elevora",
+        "description": "Explore thousands of job listings or find the perfect candidate",
+        "hrefUrl": "https://elevora.vercel.app/"
+    }
+]

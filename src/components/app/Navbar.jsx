@@ -24,7 +24,6 @@ const navItems = [
 ];
 
 const navDropdownItems = [
-  // { text: "story", link: "/story" },
   { text: "links", link: "/links" },
   { text: "Supporters", link: "/thanks" },
   { text: "Bookshelf", link: "/books" },
@@ -39,8 +38,8 @@ function Navbar() {
         <Logo />
         <div className="relative items-center hidden ml-2 md:flex max-h-10">
           <ul className="flex">
-            {navItems.map((navItem) => (
-              <NavItem key={navItem.id} navItem={navItem} />
+            {navItems.map((navItem, k) => (
+              <NavItem key={`navBar-item-key-${k}`} navItem={navItem} />
             ))}
             <li className="relative">
               <DropdownMenu>
@@ -80,9 +79,8 @@ function NavItem({ navItem }) {
     <li className="relative">
       <Link to={routePath}>
         <span
-          className={`pl-5 font-medium capitalize ${
-            special ? "gradient retro-2" : ""
-          }`}
+          className={`pl-5 font-medium capitalize ${special ? "gradient retro-2" : ""
+            }`}
         >
           {label}
         </span>
