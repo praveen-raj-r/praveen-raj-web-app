@@ -1,20 +1,8 @@
 import { LayoutGrid, List } from "lucide-react";
 import Description from "../components/app/Description";
 import { useState } from "react";
-import vscode from "/vscode.png";
-import chrome from "/chrome.png";
-import notion from "/notion.png";
-import figma from "/figma.png";
-import spotify from "/spotify.png";
-import visualStudio from "/visualStudio.png";
-import discord from "/discord.png";
-import slack from "/slack.png";
-import tailwindCss from "/tailwindCss.png";
-import react from "/react.png";
-import vercel from "/vercel.png";
-import github from "/github.png";
-import nextjs from "/nextjs.png";
-import stackoverflow from "/stackoverflow.png";
+
+import stacks from "@/data/stackapps.json";
 
 function Stack() {
   const [gridStatus, setGridStatus] = useState(true);
@@ -31,120 +19,6 @@ function Stack() {
     </>
   );
 }
-const stacks = [
-  {
-    title: "VS Code",
-    label: "Coding",
-    link: "",
-    img: vscode,
-    description:
-      "The best and recommended IDE for developing. Very ease to use and have lots of add-ons.",
-  },
-  {
-    title: "Visual Studio",
-    label: "Coding",
-    link: "https://visualstudio.microsoft.com/",
-    img: visualStudio,
-    description:
-      "The best and recommended IDE for developing. Very ease to use and have lots of add-ons.",
-  },
-  {
-    title: "Discord",
-    label: "Coding",
-    link: "https://discord.com/",
-    img: discord,
-    description:
-      "The voice and text chat features are top-notch and the app is easy to use.",
-  },
-  {
-    title: "Chrome",
-    label: "Productivity",
-    link: "https://www.google.com/intl/en_in/chrome/",
-    img: chrome,
-    description:
-      "Chrome is still my favorite browser despite trying other ones.",
-  },
-  {
-    title: "Notion",
-    label: "Productivity",
-    link: "https://www.google.com/intl/en_in/chrome/",
-    img: notion,
-    description:
-      "Notion is an amazing app that helps me stay organized and on top of my tasks.",
-  },
-  {
-    title: "Spotify",
-    label: "Entertainment",
-    link: "https://open.spotify.com/",
-    img: spotify,
-    description:
-      "Spotify offers the best music discovery and recommendation app as well as podcast place.",
-  },
-  {
-    title: "Figma",
-    label: "Design",
-    link: "https://www.figma.com/",
-    img: figma,
-    description:
-      "Figma is my design tool of choice. I do every design work from planning, ui design to creating beautiful illustrations",
-  },
-  {
-    title: "Slack",
-    label: "Communication",
-    link: "https://slack.com/intl/en-in/",
-    img: slack,
-    description:
-      "Slack brings team communication and collaboration into one place so you can get more work done.",
-  },
-  {
-    title: "Tailwind CSS",
-    label: "Development",
-    link: "https://slack.com/intl/en-in/",
-    img: tailwindCss,
-    description:
-      "Tailwind CSS is the only framework that I've seen scale on large teams. It’s easy to customize, adapts to any design, and the build size is tiny.",
-  },
-  {
-    title: "react",
-    label: "Development",
-    link: "https://react.dev/",
-    img: react,
-    description:
-      "React is my go-to for crafting sleek, dynamic UIs with reusable components and lightning-fast updates.",
-  },
-  {
-    title: "Vercel",
-    label: "Hosting",
-    link: "https://react.dev/",
-    img: vercel,
-    description:
-      "It offers a seamless development experience. Started using recently for all my projects.",
-  },
-  {
-    title: "Github",
-    label: "Development",
-    link: "https://github.com/",
-    img: github,
-    description:
-      "GitHub is my go-to for code collaboration, version control, and contributing to open-source projects.",
-  },
-  {
-    title: "Next.js",
-    label: "Development",
-    link: "https://nextjs.org/",
-    img: nextjs,
-    description:
-      "I love how Next.js simplifies complex workflows like server-side rendering and API routes. ",
-  },
-  {
-    title: "stackoverflow",
-    label: "Development",
-    link: "https://stackoverflow.com/",
-    img: stackoverflow,
-    description:
-      "Stack Overflow has been key to my development journey, offering unmatched support and fast solutions.",
-  },
-];
 
 function ListContainer({ gridStatus }) {
   return (
