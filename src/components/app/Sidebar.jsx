@@ -8,44 +8,7 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const navItems = [
-  {
-    label: "timeline",
-    link: "/timeline",
-  },
-  {
-    label: "work",
-    link: "/work",
-  },
-  {
-    label: "about",
-    link: "/about",
-  },
-  {
-    label: "skills",
-    link: "/skills",
-  },
-  {
-    label: "links",
-    link: "/links",
-  },
-  {
-    label: "supporters",
-    link: "/thanks",
-  },
-  {
-    label: "Bookshelf",
-    link: "/books",
-  },
-  {
-    label: "Tech Stack",
-    link: "/stack",
-  },
-  {
-    label: "photos",
-    link: "",
-  },
-];
+import navItems from "@/data/sidebar";
 
 function Sidebar({ item }) {
   const [sheetOpen, setSheetOpen] = useState(false);
