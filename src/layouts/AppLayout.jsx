@@ -1,6 +1,7 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "../components/app/Navbar";
 import Footer from "../components/app/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 function AppLayout() {
   return (
@@ -13,6 +14,7 @@ function AppLayout() {
         <Footer />
       </div>
       <ScrollRestoration />
+      <Analytics />
     </div>
   );
 }
