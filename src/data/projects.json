@@ -15,16 +15,23 @@
     },
     {
         "id": "3",
-        "img": "/shortenr.png",
+        "img": "/eventify-logo.png",
         "header": "Eventify",
         "description": "Simplify Your Events Scheduling",
         "hrefUrl": "https://eventify-web-app.vercel.app/"
     },
     {
         "id": "4",
-        "img": "/shortenr.png",
+        "img": "/elevora-logo.png",
         "header": "Elevora",
         "description": "Explore thousands of job listings or find the perfect candidate",
+        "hrefUrl": "https://elevora.vercel.app/"
+    },
+    {
+        "id": "5",
+        "img": "/sprinto-logo.png",
+        "header": "Sprinto",
+        "description": "Empower your team with our intuitive project management solution.",
         "hrefUrl": "https://elevora.vercel.app/"
     }
 ]

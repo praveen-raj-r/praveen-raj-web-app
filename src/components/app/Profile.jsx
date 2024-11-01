@@ -1,12 +1,25 @@
-// import praveenraj from "/praveen.png";
-import empty from "/empty.png";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 function Profile() {
   return (
     <section className="relative px-4 pt-4">
       <div className="flex items-center">
-        <div className="size-[90px] relative mb-3">
-          <img className="rounded-[50%]" src={empty} alt="Praveen Raj" />
-        </div>
+        <Dialog>
+          <DialogTrigger>
+            <Avatar className="size-[90px]">
+              <AvatarImage src="/praveen-raj.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </DialogTrigger>
+          <DialogContent className="flex justify-center w-auto h-auto p-0 m-0 [&>button]:hidden border rounded-full bg-transparent border-transparent">
+            <Avatar className="size-full">
+              <AvatarImage src="/praveen-raj.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </DialogContent>
+        </Dialog>
+
         <div className="flex flex-col ml-4">
           <h1 className="flex m-0 text-xl font-extrabold capitalize sm:font-thin sm:text-3xl">
             praveen raj
