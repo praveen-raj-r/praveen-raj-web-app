@@ -28,8 +28,8 @@ function ListContainer({ gridStatus }) {
       </h2>
       <div
         className={`${gridStatus
-            ? " grid-cols-4 sm:grid-cols-5"
-            : "max-w-[500px] grid-cols-1"
+          ? " grid-cols-4 sm:grid-cols-5"
+          : "max-w-[500px] grid-cols-1"
           } relative grid mx-auto mt-3 mb-0 w-fit transition-[0.25s] p-1 gap-2`}
       >
         {stacks.map((item, i) => {
