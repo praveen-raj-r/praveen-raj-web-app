@@ -18,8 +18,8 @@ const navItems = [
     badge: 0,
     special: true,
   },
-  { id: "2", label: "work", routePath: "/work", badge: 0, special: false },
-  { id: "3", label: "about", routePath: "/about", badge: 0, special: false },
+  { id: "2", label: "about", routePath: "/about", badge: 0, special: false },
+  { id: "3", label: "resume", routePath: "/work", badge: 0, special: false },
   { id: "4", label: "skills", routePath: "/skills", badge: 0, special: false },
 ];
 

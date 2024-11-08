@@ -6,7 +6,7 @@ function ProjectItem({ project }) {
       target="_blank"
     >
       <div className="project-cards">
-        <div className="min-w-[96px] sm:max-w-full max-w-[96px] md:w-full leading-[0px] relative">
+        <div className="min-w-[96px] md:max-w-[200px] max-w-[96px] md:w-full leading-[0px] relative">
           <img className="rounded-xl" src={project.img} alt="" />
         </div>
         <div className="flex flex-col ml-3 mr-2 md:m-0 mt-0 md:mt-[6px]">
