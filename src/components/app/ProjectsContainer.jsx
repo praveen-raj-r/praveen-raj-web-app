@@ -3,6 +3,8 @@ import ProjectItem from "./ProjectItem";
 import projects from "@/data/projects";
 
 function ProjectsContainer({ landingPage = false }) {
+  const projectsToDisplay = landingPage ? projects.slice(0, 3) : projects;
+
   return (
     <section className="relative px-2 mt-4 md:py-4 md:mt-10">
       {landingPage && (
@@ -21,8 +23,8 @@ function ProjectsContainer({ landingPage = false }) {
         </div>
       )}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-[10px] md:gap-[14px] mt-[6px] p-1">
-        {projects.map((project, id) => (
-          <ProjectItem key={`project-${id}`} project={project}></ProjectItem>
+        {projectsToDisplay.map((project, id) => (
+          <ProjectItem key={`project-${id}`} project={project} />
         ))}
       </div>
     </section>
