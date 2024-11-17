@@ -11,7 +11,10 @@ function TimeLinesContainer({ timelines }) {
 function TimeLineItem({ item }) {
   return (
     <div className="relative w-full mx-auto my-0 cursor-pointer">
-      <a className="flex px-2 pl-4 sm:justify-center" href="">
+      <a
+        className="flex px-2 pl-4 sm:justify-center"
+        href={`${item.href ? item.href : "#!"}`}
+      >
         <div className="min-w-[100px] max-w-[100px] mr-5 -mt-1 hidden sm:block">
           <p className="text-sm font-semibold text-right">{item.range}</p>
         </div>
