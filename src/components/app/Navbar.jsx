@@ -19,7 +19,13 @@ const navItems = [
     special: true,
   },
   { id: "2", label: "about", routePath: "/about", badge: 0, special: false },
-  { id: "3", label: "resume", routePath: "/work", badge: 0, special: false },
+  {
+    id: "3",
+    label: "resume",
+    downloadLink: "/praveen_raj_resume.pdf",
+    badge: 0,
+    special: false,
+  },
   { id: "4", label: "skills", routePath: "/skills", badge: 0, special: false },
 ];
 
@@ -77,15 +83,29 @@ function NavItem({ navItem }) {
   let { label, routePath, badge, special } = navItem;
   return (
     <li className="relative">
-      <Link to={routePath}>
-        <span
-          className={`pl-5 font-medium capitalize ${special ? "gradient retro-2" : ""
+      {navItem.routePath ? (
+        <Link to={routePath}>
+          <span
+            className={`pl-5 font-medium capitalize ${
+              special ? "gradient retro-2" : ""
             }`}
+          >
+            {label}
+          </span>
+          {badge > 0 && <div className="nav-items-badge">{badge}</div>}
+        </Link>
+      ) : (
+        <a
+          className={`pl-5 font-medium capitalize ${
+            special ? "gradient retro-2" : ""
+          }`}
+          href={navItem.downloadLink}
+          target="_blank" // Opens the PDF in a new tab
+          rel="noopener noreferrer" // Improves security
         >
           {label}
-        </span>
-        {badge > 0 && <div className="nav-items-badge">{badge}</div>}
-      </Link>
+        </a>
+      )}
     </li>
   );
 }
