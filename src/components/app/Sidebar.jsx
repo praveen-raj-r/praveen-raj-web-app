@@ -42,13 +42,25 @@ function Sidebar({ item }) {
 function NavItem({ item, setOpen }) {
   return (
     <li>
-      <Link
-        onClick={() => setOpen(false)}
-        to={item.link}
-        className="mx-0 my-2 text-xl py-0 px-[10px] text-white tracking-[3px] font-thin capitalize"
-      >
-        <span>{item.label}</span>
-      </Link>
+      {item.link ? (
+        <Link
+          onClick={() => setOpen(false)}
+          to={item.link}
+          className="mx-0 my-2 text-xl py-0 px-[10px] text-white tracking-[3px] font-thin capitalize"
+        >
+          <span>{item.label}</span>
+        </Link>
+      ) : (
+        <a
+          onClick={() => setOpen(false)}
+          href={item.download}
+          target="_blank" // Opens the PDF in a new tab
+          rel="noopener noreferrer" // Improves security
+          className="mx-0 my-2 text-xl py-0 px-[10px] text-white tracking-[3px] font-thin capitalize"
+        >
+          <span>{item.label}</span>
+        </a>
+      )}
     </li>
   );
 }

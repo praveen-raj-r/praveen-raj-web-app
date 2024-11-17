@@ -8,6 +8,10 @@
         "link": "/work"
     },
     {
+        "label": "resume",
+        "download": "/praveen_raj_resume.pdf"
+    },
+    {
         "label": "about",
         "link": "/about"
     },
