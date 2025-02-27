@@ -1,0 +1,26 @@
+.main-container::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  z-index: -100;
+  background-image: url(/header-gradient.svg), url(/footer-gradient.svg);
+  background-repeat: no-repeat;
+  background-position: center top, center bottom;
+  background-size: 1400px;
+}
+
+.header {
+  background-color: var(--nav-bg);
+  /* backdrop-filter: blur(22px); */
+  box-shadow: var(--nav-shadow);
+}
+.gradient {
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.retro-2 {
+  background-color: var(--retro-2c);
+  background-image: var(--retro-2);
+}
