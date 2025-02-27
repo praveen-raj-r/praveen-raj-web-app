@@ -67,3 +67,12 @@ export const sidebar = [
     link: "/skills",
   },
 ];
+
+export const dropDownData = [
+  { label: "links", link: "/links" },
+  { label: "supporters", link: "/supporters" },
+  { label: "bookshelf", link: "/bookshelf" },
+  { label: "tech stack", link: "/tech-stack" },
+  { label: "uikit", link: "/uikit" },
+  { label: "skills", link: "/skills" },
+];

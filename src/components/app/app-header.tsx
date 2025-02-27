@@ -1,23 +1,14 @@
-import { headerLinksData } from "@/data/header";
-import Logo from "./header/logo";
-import NavItemsContainer from "./header/nav-items-container";
-import SocialLinksContainer from "./header/social-links-container";
 import {
   DropdownMenu,
-  DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
+import Logo from "./header/logo";
 import { Link } from "react-router-dom";
-
-const dropDownData = [
-  { label: "links", link: "/links" },
-  { label: "supporters", link: "/supporters" },
-  { label: "bookshelf", link: "/bookshelf" },
-  { label: "tech stack", link: "/tech-stack" },
-  { label: "uikit", link: "/uikit" },
-  { label: "skills", link: "/skills" },
-];
+import NavItemsContainer from "./header/nav-items-container";
+import { dropDownData, headerLinksData } from "@/data/header";
+import SocialLinksContainer from "./header/social-links-container";
 
 const AppHeader = () => {
   return (
