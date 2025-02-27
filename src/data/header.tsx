@@ -27,6 +27,10 @@ export const sidebar = [
     download: "/PraveenRaj_softwareEngineer_Resume.pdf",
   },
   {
+    label: "skills",
+    link: "/skills",
+  },
+  {
     label: "work",
     link: "/work",
   },
@@ -43,10 +47,6 @@ export const sidebar = [
     link: "/links",
   },
   {
-    label: "supporters",
-    link: "/thanks",
-  },
-  {
     label: "Bookshelf",
     link: "/books",
   },
@@ -54,25 +54,11 @@ export const sidebar = [
     label: "tech Stack",
     link: "/stack",
   },
-  {
-    label: "version",
-    link: "",
-  },
-  {
-    label: "this uikit",
-    link: "",
-  },
-  {
-    label: "skills",
-    link: "/skills",
-  },
 ];
 
 export const dropDownData = [
+  { label: "tips", link: "/tips" },
   { label: "links", link: "/links" },
-  { label: "supporters", link: "/supporters" },
   { label: "bookshelf", link: "/bookshelf" },
   { label: "tech stack", link: "/tech-stack" },
-  { label: "uikit", link: "/uikit" },
-  { label: "skills", link: "/skills" },
 ];

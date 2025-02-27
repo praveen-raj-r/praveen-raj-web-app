@@ -17,6 +17,10 @@ const router = createBrowserRouter([
         element: <Timeline />,
       },
       {
+        path: "/skills",
+        element: <>skills</>,
+      },
+      {
         path: "/work",
         element: <>work</>,
       },
@@ -29,10 +33,6 @@ const router = createBrowserRouter([
         element: <>about</>,
       },
       {
-        path: "/story",
-        element: <>story</>,
-      },
-      {
         path: "/tips",
         element: <>tips</>,
       },
@@ -41,28 +41,12 @@ const router = createBrowserRouter([
         element: <>links</>,
       },
       {
-        path: "/supporters",
-        element: <>supporters</>,
-      },
-      {
         path: "/bookshelf",
         element: <>bookshelf</>,
       },
       {
         path: "/tech-stack",
         element: <>tech Stack</>,
-      },
-      {
-        path: "/version",
-        element: <>Version</>,
-      },
-      {
-        path: "/uikit",
-        element: <>uikit</>,
-      },
-      {
-        path: "/skills",
-        element: <>skills</>,
       },
     ],
   },
