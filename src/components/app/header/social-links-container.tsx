@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-
 import ThemeToggle from "../theme-toggle";
-import MobileSidebar from "../mobile-sidebar/mobile-sidebar";
 import { socialLinksData } from "@/data/header";
+import MobileSidebar from "../mobile-sidebar/mobile-sidebar";
 
 const SocialLinksContainer = () => {
   return (

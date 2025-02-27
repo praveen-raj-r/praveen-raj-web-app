@@ -11,10 +11,10 @@ export const socialLinksData = [
 
 export const headerLinksData = [
   { link: "/timeline", label: "timeline", effect: true },
-  { link: "/work", label: "work" },
   { link: "/about", label: "about" },
-  { link: "/story", label: "story" },
-  { link: "/tips", label: "tips" },
+  { link: "/PraveenRaj_softwareEngineer_Resume.pdf", label: "resume" },
+  { link: "/work", label: "work" },
+  { link: "/skills", label: "skills" },
 ];
 
 export const sidebar = [

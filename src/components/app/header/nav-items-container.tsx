@@ -25,18 +25,31 @@ const NavItemsContainer = ({
 const HeaderLink = ({ label, link, effect = false }: HeaderLinkData) => {
   return (
     <li className="relative">
-      <Link
-        className="block relative py-0 px-2.5 opacity-80 hover:opacity-100"
-        to={link}
-      >
-        <span
-          className={`font-medium leading-5 tracking-[0.5px] text-lg capitalize ${
-            effect ? "gradient retro-2" : ""
-          }`}
+      {label !== "resume" ? (
+        <Link
+          className="block relative py-0 px-2.5 opacity-80 hover:opacity-100"
+          to={link}
         >
-          {label}
-        </span>
-      </Link>
+          <span
+            className={`font-medium leading-5 tracking-[0.5px] text-lg capitalize cursor-pointer ${
+              effect ? "gradient retro-2" : ""
+            }`}
+          >
+            {label}
+          </span>
+        </Link>
+      ) : (
+        <a
+          className="block relative py-0 px-2.5 opacity-80 hover:opacity-100"
+          href={link}
+          target="_blank" // Opens the PDF in a new tab
+          rel="noopener noreferrer" // Improves security
+        >
+          <span className="font-medium leading-5 tracking-[0.5px] text-lg capitalize cursor-pointer">
+            Resume
+          </span>
+        </a>
+      )}
     </li>
   );
 };
