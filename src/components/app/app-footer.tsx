@@ -1,10 +1,10 @@
-import { FooterDesignLeft, FooterDesignRight } from "./footer-designs";
-import FooterQuotes from "./footer-quotes";
+import { FooterDesignLeft, FooterDesignRight } from "./footer/footer-designs";
+import FooterQuotes from "./footer/footer-quotes";
 
 const AppFooter = () => {
   return (
     <footer className="relative">
-      <div className="relative flex flex-col justify-center p-4 text-center">
+      <div className="relative flex flex-col justify-center p-2 text-center">
         <FooterQuotes />
         <div className="w-full text-center bottom-[100px] flex items-center justify-center opacity-20 mb-[60px] mt-[10px]">
           <FooterDesignLeft className="transform opacity-40 -scale-x-100" />
