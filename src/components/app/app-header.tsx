@@ -14,7 +14,7 @@ import { ChevronDown } from "lucide-react";
 const AppHeader = () => {
   return (
     <header
-      className="header h-[72px] rounded-[36px] sticky top-6 z-10 justify-between flex py-4 px-[30px] bg-blend-luminosity "
+      className="header rounded-xl sticky top-6 z-10 justify-between flex px-4 py-[10px] bg-blend-luminosity backdrop-blur-[44px]"
       style={{ WebkitBoxPack: "justify" }}
     >
       <div>

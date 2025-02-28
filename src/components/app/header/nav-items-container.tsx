@@ -31,7 +31,7 @@ const HeaderLink = ({ label, link, effect = false }: HeaderLinkData) => {
           to={link}
         >
           <span
-            className={`font-medium leading-5 tracking-[0.5px] text-lg capitalize cursor-pointer ${
+            className={`font-medium leading-normal tracking-[-0.25px] text-base capitalize cursor-pointer ${
               effect ? "gradient retro-2" : ""
             }`}
           >
@@ -45,7 +45,7 @@ const HeaderLink = ({ label, link, effect = false }: HeaderLinkData) => {
           target="_blank" // Opens the PDF in a new tab
           rel="noopener noreferrer" // Improves security
         >
-          <span className="font-medium leading-5 tracking-[0.5px] text-lg capitalize cursor-pointer">
+          <span className="font-medium leading-normal tracking-[-0.25px] text-base capitalize cursor-pointer">
             Resume
           </span>
         </a>

@@ -21,13 +21,41 @@
   /* backdrop-filter: blur(22px); */
   box-shadow: var(--nav-shadow);
 }
+
 .gradient {
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.sky-2 {
+  background-color: #5c82ff;
+  background-image: linear-gradient(
+    90deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+}
+
+.retro-1 {
+  background-color: #1e76c9;
+  background-image: linear-gradient(
+    90.42deg,
+    #d400a5 0.58%,
+    #1e76c9 54.22%,
+    #35fced 100.26%
+  );
+}
+
 .retro-2 {
-  background-color: var(--retro-2c);
-  background-image: var(--retro-2);
+  background-color: #566cec;
+  background-image: linear-gradient(
+    90.42deg,
+    #4ab1f1 0.58%,
+    #566cec 37.22%,
+    #d749af 73.87%,
+    #ff7c51 112.26%
+  );
 }
