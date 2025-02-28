@@ -1,3 +1,4 @@
+import AppFooter from "@/components/app/app-footer";
 import AppHeader from "@/components/app/app-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Outlet } from "react-router-dom";
@@ -14,6 +15,9 @@ const AppLayout = () => {
           <main className="max-w-[800px] w-full px-2 mx-auto mt-1 h-full">
             <Outlet />
           </main>
+          <div className="max-w-[800px] w-full mx-auto px-2">
+            <AppFooter />
+          </div>
         </ScrollArea>
       </div>
     </div>
