@@ -1,3 +1,10 @@
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+.font-Fraunces {
+  font-family: "Fraunces", serif;
+}
+
 .main-container::before {
   content: "";
   position: absolute;
