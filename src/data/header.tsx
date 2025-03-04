@@ -1,18 +1,24 @@
+import {
+  githubUrl,
+  instagramUrl,
+  linkedUrl,
+  resumePdfUrl,
+} from "@/lib/constants";
 import { Github, Instagram, Linkedin } from "lucide-react";
 
 export const socialLinksData = [
   {
     icon: Linkedin,
-    link: "https://www.linkedin.com/in/developer-praveen-raj/",
+    link: linkedUrl,
   },
-  { icon: Github, link: "https://github.com/praveen-raj-r" },
-  { icon: Instagram, link: "https://www.instagram.com/real_praveenraj/" },
+  { icon: Github, link: githubUrl },
+  { icon: Instagram, link: instagramUrl },
 ];
 
 export const headerLinksData = [
   { link: "/timeline", label: "timeline", effect: true },
   { link: "/about", label: "about" },
-  { link: "/PraveenRaj_softwareEngineer_Resume.pdf", label: "resume" },
+  { link: resumePdfUrl, label: "resume" },
   { link: "/work", label: "work" },
 ];
 
@@ -23,7 +29,7 @@ export const sidebar = [
   },
   {
     label: "resume",
-    download: "/PraveenRaj_softwareEngineer_Resume.pdf",
+    download: resumePdfUrl,
   },
   {
     label: "work",
