@@ -1,4 +1,6 @@
 import AllPageDescription from "@/components/app/all-page-description";
+import TimeLinesContainer from "@/components/app/timeline/timelines-container";
+import { timelines } from "@/data/timelines";
 import { instagramUrl, linkedUrl } from "@/lib/constants";
 import { Instagram, Linkedin } from "lucide-react";
 import { JSX } from "react";
@@ -34,9 +36,11 @@ const Timeline = () => {
           <SocialLinks item={item} key={`social-links-${i}`} />
         ))}
       </div>
+      <TimeLinesContainer timelines={timelines} />
     </div>
   );
 };
+
 interface SocialLinkItem {
   icon: JSX.Element;
   label: string;
