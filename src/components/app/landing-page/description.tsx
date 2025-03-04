@@ -1,6 +1,6 @@
 const Description = () => {
   return (
-    <p className=" sm:text-xl text-[17px] leading-[150%] my-4 mx-1 sm:mx-auto font-light mt-8 text-balance">
+    <p className=" sm:text-xl text-[17px] leading-[150%] my-4 mx-1 sm:mx-auto font-light mt-8 text-balance sm:tracking-normal tracking-tighter">
       &quot;As a frontend engineer, I merge design and technology to create
       exceptional user experiences. I specialize in{" "}
       <span className="font-semibold gradient sky-2">
