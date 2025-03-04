@@ -26,10 +26,10 @@ const Timeline = () => {
   return (
     <div>
       <AllPageDescription header="Timeline">
-        &quot;Discover seven key milestones and achievements that have shaped my
+        Discover seven key milestones and achievements that have shaped my
         journey so far. From important career moments to standout
         accomplishments, this timeline gives a quick glimpse into my growth. For
-        a more detailed view, visit my LinkedIn profile.&quot;
+        a more detailed view, visit my LinkedIn profile.
       </AllPageDescription>
       <div className="flex justify-center gap-10">
         {socialLinksContent.map((item, i) => (

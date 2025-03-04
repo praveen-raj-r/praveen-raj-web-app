@@ -16,9 +16,9 @@ const Certifications = () => {
   return (
     <div>
       <AllPageDescription header="Certifications">
-        &quot;Explore the certifications I've earned, showcasing my skills,
-        expertise, and continuous learning. Each certification reflects my
-        commitment to growth and staying up to date in my field.&quot;
+        Explore the certifications I've earned, showcasing my skills, expertise,
+        and continuous learning. Each certification reflects my commitment to
+        growth and staying up to date in my field.
       </AllPageDescription>
 
       <div className="grid sm:grid-cols-3 gap-4">

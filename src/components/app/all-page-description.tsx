@@ -12,7 +12,9 @@ function AllPageDescription({ header, children }: AllPageDescriptionProps) {
       <h2 className="inline-block text-[32px] mb-3 tracking-[-1.2px] font-bold gradient retro-2">
         {header}
       </h2>
-      <p className="tracking-[-0.28px] leading-[140%] text-lg">{children}</p>
+      <p className="tracking-[-0.28px] leading-[140%] text-lg">
+        &quot;{children}&quot;
+      </p>
       <div className="flex items-center justify-center mx-0 mt-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"

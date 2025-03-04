@@ -4,6 +4,7 @@ import PageNotFound from "@/pages/page-not-found";
 import LandingPage from "@/pages/landing-page";
 import AppLayout from "@/layout/app-layout";
 import Timeline from "@/pages/timeline";
+import Stack from "@/pages/stack";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/stack",
-        element: <>tech Stack</>,
+        element: <Stack />,
       },
     ],
   },
