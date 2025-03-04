@@ -5,6 +5,7 @@ import LandingPage from "@/pages/landing-page";
 import AppLayout from "@/layout/app-layout";
 import Timeline from "@/pages/timeline";
 import Stack from "@/pages/stack";
+import About from "@/pages/about";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <>about</>,
+        element: <About />,
       },
       {
         path: "/certifications",
