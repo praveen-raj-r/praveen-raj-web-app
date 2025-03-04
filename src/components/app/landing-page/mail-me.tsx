@@ -8,7 +8,7 @@ const MailMe = () => {
     <div className="my-10 mt-20 flex flex-col items-center gap-5">
       <p className="gradient sky-2 text-2xl">Get in Touch</p>
 
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-center">
         <AuroraText>Let’s Work Together</AuroraText>
       </h1>
 
