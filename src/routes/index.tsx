@@ -17,20 +17,20 @@ const router = createBrowserRouter([
         element: <Timeline />,
       },
       {
-        path: "/skills",
-        element: <>skills</>,
-      },
-      {
         path: "/work",
         element: <>work</>,
       },
       {
-        path: "/work",
-        element: <>work</>,
+        path: "/work/:workId",
+        element: <>work id</>,
       },
       {
         path: "/about",
         element: <>about</>,
+      },
+      {
+        path: "/certifications",
+        element: <>certifications</>,
       },
       {
         path: "/tips",
@@ -39,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: "/links",
         element: <>links</>,
-      },
-      {
-        path: "/books",
-        element: <>bookshelf</>,
       },
       {
         path: "/stack",

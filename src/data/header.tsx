@@ -14,7 +14,6 @@ export const headerLinksData = [
   { link: "/about", label: "about" },
   { link: "/PraveenRaj_softwareEngineer_Resume.pdf", label: "resume" },
   { link: "/work", label: "work" },
-  { link: "/skills", label: "skills" },
 ];
 
 export const sidebar = [
@@ -25,10 +24,6 @@ export const sidebar = [
   {
     label: "resume",
     download: "/PraveenRaj_softwareEngineer_Resume.pdf",
-  },
-  {
-    label: "skills",
-    link: "/skills",
   },
   {
     label: "work",
@@ -43,13 +38,14 @@ export const sidebar = [
     link: "/tips",
   },
   {
+    label: "certifications",
+    link: "/certifications",
+  },
+  {
     label: "links",
     link: "/links",
   },
-  {
-    label: "Bookshelf",
-    link: "/books",
-  },
+
   {
     label: "tech Stack",
     link: "/stack",
@@ -59,6 +55,6 @@ export const sidebar = [
 export const dropDownData = [
   { label: "tips", link: "/tips" },
   { label: "links", link: "/links" },
-  { label: "bookshelf", link: "/books" },
   { label: "tech stack", link: "/stack" },
+  { label: "certifications", link: "/certifications" },
 ];
