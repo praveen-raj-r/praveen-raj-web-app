@@ -1,5 +1,5 @@
-// import AppFooter from "@/components/app/app-footer";
 import Description from "@/components/app/landing-page/description";
+import MailMe from "@/components/app/landing-page/mail-me";
 import Profile from "@/components/app/landing-page/profile";
 import Works from "@/components/app/landing-page/works";
 
@@ -13,7 +13,7 @@ const LandingPage = () => {
           Building what I love.
         </h4>
         <Works />
-        {/* <AppFooter /> */}
+        <MailMe />
       </div>
     </div>
   );
