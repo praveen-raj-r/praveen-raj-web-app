@@ -21,7 +21,7 @@ const Certifications = () => {
         commitment to growth and staying up to date in my field.&quot;
       </AllPageDescription>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-3 gap-4">
         {certificates.map((certificate) => (
           <CertificateCard certificate={certificate} key={certificate.id} />
         ))}
