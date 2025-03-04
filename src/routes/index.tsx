@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Certifications from "@/pages/certifications";
 import PageNotFound from "@/pages/page-not-found";
 import LandingPage from "@/pages/landing-page";
 import AppLayout from "@/layout/app-layout";
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/certifications",
-        element: <>certifications</>,
+        element: <Certifications />,
       },
       {
         path: "/tips",
