@@ -7,6 +7,7 @@ import Timeline from "@/pages/timeline";
 import Stack from "@/pages/stack";
 import About from "@/pages/about";
 import Works from "@/pages/works";
+import Tips from "@/pages/tips";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/tips",
-        element: <>tips</>,
+        element: <Tips />,
       },
       {
         path: "/links",

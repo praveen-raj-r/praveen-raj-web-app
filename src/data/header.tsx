@@ -20,6 +20,7 @@ export const headerLinksData = [
   { link: "/about", label: "about" },
   { link: resumePdfUrl, label: "resume" },
   { link: "/work", label: "work" },
+  { label: "tech stack", link: "/stack" },
 ];
 
 export const sidebar = [
@@ -61,6 +62,5 @@ export const sidebar = [
 export const dropDownData = [
   { label: "tips", link: "/tips" },
   { label: "links", link: "/links" },
-  { label: "tech stack", link: "/stack" },
   { label: "certifications", link: "/certifications" },
 ];
