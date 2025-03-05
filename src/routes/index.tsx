@@ -6,6 +6,7 @@ import AppLayout from "@/layout/app-layout";
 import Timeline from "@/pages/timeline";
 import Stack from "@/pages/stack";
 import About from "@/pages/about";
+import Works from "@/pages/works";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/work",
-        element: <>work</>,
+        element: <Works />,
       },
       {
         path: "/work/:workId",

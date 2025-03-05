@@ -3,6 +3,7 @@ import TechStackContainer from "@/components/app/text-stack/tech-stack-container
 import ToggleButton from "@/components/app/text-stack/toggle-button";
 import { useState } from "react";
 import stacks from "@/data/tech-stack";
+
 const Stack = () => {
   const [gridStatus, setGridStatus] = useState(true);
   return (
