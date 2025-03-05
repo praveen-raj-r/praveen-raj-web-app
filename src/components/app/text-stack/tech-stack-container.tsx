@@ -23,48 +23,43 @@ const TechStackContainer: FC<TechStackContainerProps> = ({
         APPS and GAMES
       </h2>
       <div
-        className={`${
-          gridStatus
+        className={`${gridStatus
             ? " grid-cols-4 sm:grid-cols-5"
             : "max-w-[500px] grid-cols-1"
-        } relative grid mx-auto mt-3 mb-0 w-fit transition-[0.25s] p-1 gap-2`}
+          } relative grid mx-auto mt-3 mb-0 w-fit transition-[0.25s] p-1 gap-2`}
       >
-        {stacks.map((item, i) => {
-          return (
-            <a
-              className="relative flex items-center p-3 m-0 cursor-pointer sm:p-4 "
-              key={`techstack-app-${i}`}
-              href={item.link}
-            >
-              <div
-                className={`w-[60px] rouned-[8px] transition-[0.25s] leading-[0] relative stack-design-before ${
-                  gridStatus ? "" : "hidden"
+        {stacks.map((item) => (
+          <a
+            className="relative flex items-center p-3 m-0 cursor-pointer sm:p-4 "
+            key={`techstack-app-${item.img}`}
+            href={item.link}
+          >
+            <div
+              className={`w-[60px] rouned-[8px] transition-[0.25s] leading-[0] relative stack-design-before ${gridStatus ? "" : "hidden"
                 }`}
-              >
-                <img src={item.img} className="rounded-[8px] size-[60px]" />
-              </div>
-              <div
-                className={`${
-                  gridStatus ? "hidden" : ""
+            >
+              <img src={item.img} className="rounded-[8px] size-[60px]" />
+            </div>
+            <div
+              className={`${gridStatus ? "hidden" : ""
                 } flex gap-4 design-hover-before items-center`}
-              >
-                <img className="size-24" src={item.img} alt="" />
+            >
+              <img className="size-24" src={item.img} alt="" />
 
-                <div className="flex flex-col transition-[100ms]">
-                  <h3 className="relative flex items-center mx-0 my-1">
-                    {item.title}
-                    <div className="relative ml-2 text-xs blue rounded-[9px] py-px px-1.5 inline-grid">
-                      {item.label}
-                    </div>
-                  </h3>
-                  <p className="leading-[140%] opacity-60 m-0">
-                    {item.description}
-                  </p>
-                </div>
+              <div className="flex flex-col transition-[100ms]">
+                <h3 className="relative flex items-center mx-0 my-1">
+                  {item.title}
+                  <div className="relative ml-2 text-xs blue rounded-[9px] py-px px-1.5 inline-grid">
+                    {item.label}
+                  </div>
+                </h3>
+                <p className="leading-[140%] opacity-60 m-0">
+                  {item.description}
+                </p>
               </div>
-            </a>
-          );
-        })}
+            </div>
+          </a>
+        ))}
       </div>
     </>
   );

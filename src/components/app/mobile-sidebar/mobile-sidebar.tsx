@@ -22,11 +22,11 @@ const MobileSidebar = () => {
         <ScrollArea className="h-[calc(100%-10px)]">
           <div className="pt-3 px-6">
             <ul className="flex flex-col items-end gap-y-3">
-              {sidebar.map((item, i) => (
+              {sidebar.map((item) => (
                 <NavItems
                   setOpen={setSheetOpen}
                   item={item}
-                  key={`sidebar-item-${i}`}
+                  key={`sidebar-item-${item.link}`}
                 />
               ))}
             </ul>

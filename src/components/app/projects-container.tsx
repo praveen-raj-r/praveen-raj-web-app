@@ -6,8 +6,8 @@ const ProjectsContainer = ({ landingPage = false }) => {
 
     return (
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-[10px] md:gap-[14px] mt-[6px] py-1">
-            {projectsToDisplay.map((project, id) => (
-                <ProjectItem key={`project-${id}`} project={project} />
+            {projectsToDisplay.map((project) => (
+                <ProjectItem key={project.id} project={project} />
             ))}
         </div>
     );

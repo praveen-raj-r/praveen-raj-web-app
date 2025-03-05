@@ -10,7 +10,7 @@ function TimeLinesContainer({ timelines }: { timelines: TimelineItem[] }) {
   return (
     <div className="flex flex-col-reverse pt-14">
       {timelines.map((item, i) => (
-        <TimeLineItem item={item} key={`timeline-${i}`} />
+        <TimeLineItem item={item} key={`timelines-${i}`} />
       ))}
     </div>
   );
@@ -35,7 +35,7 @@ function TimeLineItem({ item }: { item: TimelineItem }) {
               <div>
                 {item.label.map((i, j) => (
                   <div
-                    key={`label-${j}`}
+                    key={`timeline-label-${j}`}
                     className={`relative inline-grid text-[13px] font-bold leading-[18px] px-1.5 py-px rounded-[9px] mr-1.5 ${i.class}`}
                   >
                     {i.text}

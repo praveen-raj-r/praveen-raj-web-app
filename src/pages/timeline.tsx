@@ -33,7 +33,7 @@ const Timeline = () => {
       </AllPageDescription>
       <div className="flex justify-center gap-10">
         {socialLinksContent.map((item, i) => (
-          <SocialLinks item={item} key={`social-links-${i}`} />
+          <SocialLinks item={item} key={`timeline-social-links-${i}`} />
         ))}
       </div>
       <TimeLinesContainer timelines={timelines} />

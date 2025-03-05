@@ -15,8 +15,13 @@ const SocialLinksContainer = () => {
       >
         {socialLinksData.map((i) => {
           const Icon = i.icon;
+
           return (
-            <Link className="leading-[0] py-0.5 px-2" to={i.link}>
+            <Link
+              key={`${i.link}-socialLinksData`}
+              className="leading-[0] py-0.5 px-2"
+              to={i.link}
+            >
               <Icon className="stroke-primary" size={18} />
             </Link>
           );

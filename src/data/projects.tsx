@@ -1,27 +1,27 @@
 export const projects = [
     {
-        id: "1",
+        id: "project-1",
         img: "/evergreen-escapes.png",
         header: "Evergreen Escapes",
         description: "Beautifully Crafted Cabin Booking Website",
         hrefUrl: "https://evergreen-escapes.vercel.app/",
     },
     {
-        id: "2",
+        id: "project-2",
         img: "/shortenr.png",
         header: "Shortenr App",
         description: "The only URL Shortener you'll ever need! ",
         hrefUrl: "https://shortenr-app.vercel.app/",
     },
     {
-        id: "3",
+        id: "project-3",
         img: "/eventify-logo.png",
         header: "Eventify",
         description: "Simplify Your Events Scheduling",
         hrefUrl: "https://eventify-web-app.vercel.app/",
     },
     {
-        id: "4",
+        id: "project-4",
         img: "/elevora-logo.png",
         header: "Elevora",
         description:
@@ -29,7 +29,7 @@ export const projects = [
         hrefUrl: "https://elevora.vercel.app/",
     },
     {
-        id: "5",
+        id: "project-5",
         img: "/sprinto-logo.png",
         header: "Sprinto",
         description:
@@ -37,7 +37,7 @@ export const projects = [
         hrefUrl: "https://elevora.vercel.app/",
     },
     {
-        id: "6",
+        id: "project-6",
         img: "/skyviewer.png",
         header: "SkyViewer",
         description:

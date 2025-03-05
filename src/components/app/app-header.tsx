@@ -38,7 +38,7 @@ const AppHeader = () => {
 
               <DropdownMenuContent>
                 {dropDownData.map((i) => (
-                  <Link to={i.link}>
+                  <Link key={i.label} to={i.link}>
                     <DropdownMenuItem className="text-base font-normal text-gray-50 focus:bg-transparent focus:opacity-100 opacity-40 cursor-pointer">
                       {i.label}
                     </DropdownMenuItem>

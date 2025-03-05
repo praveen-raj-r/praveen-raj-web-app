@@ -15,7 +15,12 @@ const NavItemsContainer = ({
     <div className="hidden md:flex items-center max-h-10 relative">
       <ul className="m-0 flex flex-row">
         {headerLinksData.map((e: HeaderLinkData) => (
-          <HeaderLink label={e.label} link={e.link} effect={e.effect} />
+          <HeaderLink
+            key={`${e.link}-navItems`}
+            label={e.label}
+            link={e.link}
+            effect={e.effect}
+          />
         ))}
       </ul>
     </div>
@@ -31,9 +36,8 @@ const HeaderLink = ({ label, link, effect = false }: HeaderLinkData) => {
           to={link}
         >
           <span
-            className={`font-medium leading-normal tracking-[-0.25px] text-base capitalize cursor-pointer ${
-              effect ? "gradient retro-2" : ""
-            }`}
+            className={`font-medium leading-normal tracking-[-0.25px] text-base capitalize cursor-pointer ${effect ? "gradient retro-2" : ""
+              }`}
           >
             {label}
           </span>

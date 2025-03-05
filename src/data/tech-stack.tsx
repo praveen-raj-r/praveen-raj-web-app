@@ -1,4 +1,4 @@
-const githubUrl = `https://github.com/`;
+const githubUrl = `https://github.com`;
 
 const stacks = [
   {
