@@ -45,6 +45,7 @@
     --color-4: 195 100% 63%;
     --color-5: 90 100% 63%;
   }
+  
   .dark {
     --nav-bg: #120c1b4d;
     --nav-shadow: inset 0px 0px 8px #ffffff14;
@@ -88,8 +89,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-
 
 @layer base {
   * {
