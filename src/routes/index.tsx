@@ -8,6 +8,7 @@ import Stack from "@/pages/stack";
 import About from "@/pages/about";
 import Works from "@/pages/works";
 import Tips from "@/pages/tips";
+import Links from "@/pages/links";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/links",
-        element: <>links</>,
+        element: <Links />,
       },
       {
         path: "/stack",
