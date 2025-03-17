@@ -2,6 +2,10 @@
   font-family: "Fraunces", serif;
 }
 
+.font-Plus-Jakarta-Sans {
+  font-family: "Fraunces", serif;
+}
+
 .main-container::before {
   content: "";
   position: absolute;
