@@ -20,7 +20,7 @@ const TechStackContainer: FC<TechStackContainerProps> = ({
   return (
     <>
       <h2 className="py-0 m-0 mt-10 text-lg text-center tracking-[2px] text-[#72788899] opacity-70 p-1">
-        APPS and GAMES
+      APPS and TOOLS
       </h2>
       <div
         className={`${gridStatus
