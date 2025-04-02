@@ -2,7 +2,7 @@ const FooterQuotes = () => {
     return (
         <p className="my-5 sm:my-10 text-xl text-gray-100 gradient sky-2 p-4">
             Build using{" "}
-            <a className="gradient retro-2" href="https://vite.dev/" target="_blank">
+            <a className="gradient retro-1" href="https://vite.dev/" target="_blank">
                 Vite
             </a>
             , Coded in{" "}
@@ -10,11 +10,7 @@ const FooterQuotes = () => {
                 Reactjs
             </a>{" "}
             and deployed on{" "}
-            <a
-                className="gradient retro-2"
-                href="https://vercel.com/"
-                target="_blank"
-            >
+            <a className="gradient sky-2" href="https://vercel.com/" target="_blank">
                 Vercel
             </a>
         </p>

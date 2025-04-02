@@ -40,19 +40,18 @@ export const sidebar = [
     label: "about",
     link: "/about",
   },
-  {
-    label: "tips",
-    link: "/tips",
-  },
+  // {
+  //   label: "tips",
+  //   link: "/tips",
+  // },
   {
     label: "certifications",
     link: "/certifications",
   },
-  {
-    label: "links",
-    link: "/links",
-  },
-
+  // {
+  //   label: "links",
+  //   link: "/links",
+  // },
   {
     label: "tech Stack",
     link: "/stack",
@@ -60,7 +59,7 @@ export const sidebar = [
 ];
 
 export const dropDownData = [
-  { label: "tips", link: "/tips" },
-  { label: "links", link: "/links" },
+  // { label: "tips", link: "/tips" },
+  // { label: "links", link: "/links" },
   { label: "certifications", link: "/certifications" },
 ];
