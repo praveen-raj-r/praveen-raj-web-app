@@ -7,7 +7,7 @@ const ProfileImg = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Avatar className="size-8 sm:size-16 ml-2 mr-1.5">
+        <Avatar className="size-10 sm:size-16 ml-2 mr-1.5">
           <AvatarImage src={imgSrc} />
           <AvatarFallback>PR</AvatarFallback>
         </Avatar>
