@@ -9,8 +9,8 @@ const LandingPage = () => {
       <div className="">
         <Profile />
         <Description />
-        <h4 className="my-10 text-2xl font-medium text-center sm:text-3xl gradient sky-2">
-          Building what I love.
+        <h4 className="font-Fraunces my-10 text-2xl dark:font-normal font-medium text-center sm:text-3xl gradient sky-2">
+          Building what I love
         </h4>
         <Works />
         <MailMe />
