@@ -16,7 +16,7 @@ const MobileSidebar = () => {
         </span>
       </SheetTrigger>
 
-      <SheetContent className="bg-[#1c162f4d] backdrop-blur-[74px] border-transparent pt-11 transition-[0.3s] [&>button]:text-white">
+      <SheetContent className="bg-[#1c162f4d] backdrop-blur-[74px] border-transparent pt-11 transition-[0.3s] [&>button]:text-white font-inter">
         <SheetTitle></SheetTitle>
 
         <ScrollArea className="h-[calc(100%-10px)]">
