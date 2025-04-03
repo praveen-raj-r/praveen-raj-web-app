@@ -244,6 +244,15 @@
 
 .project-cards:hover::before {
   opacity: 1;
+  background: linear-gradient(66deg,
+      rgb(66 48 231 / 80%) 0%,
+      rgb(205 159 174 / 70%) 100%);
+  transition: 333ms;
+  transform: scale(1);
+}
+
+.dark .project-cards:hover::before {
+  opacity: 1;
   background: linear-gradient(90deg,
       rgba(30, 28, 50, 0.8) 0%,
       rgba(43, 22, 29, 0.7) 100%);

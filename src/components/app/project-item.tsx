@@ -12,7 +12,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
             href={`${project.hrefUrl}`}
             target="_blank"
         >
-            <div className="project-cards">
+            <div className="project-cards text-black dark:text-white">
                 <div className="min-w-[96px] md:max-w-[200px] max-w-[96px] md:w-full leading-[0px] relative">
                     <img className="rounded-xl" src={project.img} alt="" />
                 </div>
