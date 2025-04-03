@@ -20,7 +20,7 @@ export const headerLinksData = [
   { link: "/about", label: "about" },
   { link: resumePdfUrl, label: "resume" },
   { link: "/work", label: "work" },
-  { label: "tech stack", link: "/stack" },
+  // { label: "tech stack", link: "/stack" },
 ];
 
 export const sidebar = [
@@ -48,17 +48,21 @@ export const sidebar = [
     label: "certifications",
     link: "/certifications",
   },
-  // {
-  //   label: "links",
-  //   link: "/links",
-  // },
   {
     label: "tech Stack",
     link: "/stack",
   },
+  // {
+  //   label: "links",
+  //   link: "/links",
+  // },
 ];
 
 export const dropDownData = [
+  {
+    label: "tech Stack",
+    link: "/stack",
+  },
   // { label: "tips", link: "/tips" },
   // { label: "links", link: "/links" },
   { label: "certifications", link: "/certifications" },
