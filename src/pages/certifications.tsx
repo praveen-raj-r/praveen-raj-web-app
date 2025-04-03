@@ -35,7 +35,7 @@ const CertificateCard: FC<{ certificate: Certificate }> = ({ certificate }) => {
 
   return (
     <a href={certificate.imgUrl} target="_blank" rel="noopener noreferrer">
-      <Card className="bg-[#f5f5f599] hover:text-white shadow-none dark:bg-[#191920e6] group hover:bg-gradient-to-t from-[#5f5f5f] to-[#311d2b] rounded-xl border-none">
+      <Card className="certification-card hover:text-white shadow-none group rounded-xl border-none transition-colors duration-1000">
         <CardHeader className="flex justify-between flex-row items-center">
           <div className="flex">
             <img src={certificate.certificateProviderLogo} />
