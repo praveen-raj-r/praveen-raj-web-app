@@ -83,13 +83,23 @@ function Contact() {
   };
 
   /* -------- Fake API Call -------- */
-  const fakeApiCall = (data: ContactForm) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("✅ Fake API Response:", data);
-        resolve(true);
-      }, 2000); // 2 sec delay
+  const API_URL = import.meta.env.VITE_CONTACT_API_URL;
+  const submitContactForm = async (data: ContactForm) => {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
+
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.error || "Submission failed");
+    }
+
+    return result;
   };
 
   /* -------- Submit Handler -------- */
@@ -98,14 +108,13 @@ function Contact() {
     setSuccess(false);
 
     try {
-      await fakeApiCall(data);
+      await submitContactForm(data);
 
       setSuccess(true);
-
-      // Reset form after submission
       reset();
     } catch (error) {
-      console.log("❌ Submission Failed:", error);
+      console.log("❌ Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
