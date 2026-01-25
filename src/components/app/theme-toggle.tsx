@@ -1,31 +1,23 @@
-import { useTheme } from "@/context/theme-provider";
 import { Moon, Sun } from "lucide-react";
-import { Button } from "../ui/button";
+import { useTheme } from "@/context/theme-provider";
 
-function ThemeToggle() {
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <Button
-      className="rounded-full border-none bg-transparent hover:bg-transparent shadow-none"
-      size="icon"
+    <div
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`flex items-center cursor-pointer transition-transform duration-500 max-h-10 ${
+        isDark ? "rotate-180" : "rotate-0"
+      }`}
     >
-      <div
-        className={`flex items-center cursor-pointer transition-transform duration-500 ${
-          isDark ? "rotate-0" : "rotate-180"
-        }`}
-      >
-        {isDark ? (
-          <Moon className="transition-all rotate-0  stroke-primary" />
-        ) : (
-          <Sun className="transition-all rotate-0  stroke-primary" />
-        )}
-        <span className="sr-only">Toggle theme</span>
-      </div>
-    </Button>
+      {isDark ? (
+        <Sun className="size-5 sm:size-4 text-yellow-500 rotate-0 transition-all" />
+      ) : (
+        <Moon className="size-5 sm:size-4 text-blue-500 rotate-0 transition-all" />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </div>
   );
 }
-
-export default ThemeToggle;
