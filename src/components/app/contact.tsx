@@ -84,22 +84,41 @@ function Contact() {
 
   /* -------- Fake API Call -------- */
   const API_URL = import.meta.env.VITE_CONTACT_API_URL;
+  // const submitContactForm = async (data: ContactForm) => {
+  //   const response = await fetch(API_URL, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   });
+
+  //   const result = await response.json();
+
+  //   if (!result.success) {
+  //     throw new Error(result.error || "Submission failed");
+  //   }
+
+  //   return result;
+  // };
+
   const submitContactForm = async (data: ContactForm) => {
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    formData.append("workplace", data.workplace || "");
+    formData.append("email", data.email);
+    formData.append("phone", data.phone || "");
+    formData.append("source", data.source);
+    formData.append("helpWith", data.helpWith.join(", "));
+    formData.append("notes", data.notes || "");
+
     const response = await fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+      body: formData,
     });
 
-    const result = await response.json();
-
-    if (!result.success) {
-      throw new Error(result.error || "Submission failed");
-    }
-
-    return result;
+    return response.text();
   };
 
   /* -------- Submit Handler -------- */
