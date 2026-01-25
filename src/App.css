@@ -1,0 +1,152 @@
+@keyframes rnavAnim1 {
+  0% {
+    transform: translateY(6px) rotate(45deg);
+  }
+  70% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes rnavAnim2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes rnavAnim3 {
+  0% {
+    transform: translateY(-6px) rotate(135deg);
+  }
+  70% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-rnav1 {
+  animation: rnavAnim1 0.3s ease-in-out forwards;
+}
+.animate-rnav2 {
+  animation: rnavAnim2 0.3s ease-in-out forwards;
+}
+.animate-rnav3 {
+  animation: rnavAnim3 0.3s ease-in-out forwards;
+}
+.font-Fraunces {
+  font-family: "Fraunces", serif;
+}
+.font-Plus-Jakarta-Sans {
+  font-family: "Fraunces", serif;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+
+.gradient {
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.retro-2 {
+  background-color: #566cec;
+  background-image: linear-gradient(
+    90.42deg,
+    #4ab1f1 0.58%,
+    #566cec 37.22%,
+    #d749af 73.87%,
+    #ff7c51 112.26%
+  );
+}
+
+.retro-3 {
+  background-image: linear-gradient(90deg, #80d0f2 0%, #d749af 50%, #ff7c51);
+}
+
+.sky-2 {
+  background-image: linear-gradient(
+    90deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+}
+
+.sky-3 {
+  background-color: #1584eb;
+  background-image: linear-gradient(90deg, #1584eb 0%, #24d6d9 97.34%);
+}
+.retro-4 {
+  background-image: linear-gradient(
+    90deg,
+    #ff6fd8 0%,
+    #feca57 50%,
+    #48dbfb 100%
+  );
+}
+
+.retro-5 {
+  background-image: linear-gradient(
+    90deg,
+    #6a5af9 0%,
+    #d66efd 45%,
+    #ff8c42 100%
+  );
+}
+
+.retro-6 {
+  background-image: linear-gradient(
+    90deg,
+    #ff5f6d 0%,
+    #ffc371 50%,
+    #7bed9f 100%
+  );
+}
+
+.coffee-2 {
+  background-color: #566cec;
+  background-image: linear-gradient(
+    90deg,
+    #fa6e6e 0%,
+    #a3387e 50%,
+    #224d88 100%
+  );
+}
+
+.rainbow-2 {
+  background-image: linear-gradient(
+    90deg,
+    #dc36fa 0%,
+    #a167ef 25%,
+    #609fe4 50%,
+    #3abfde 75%,
+    #04d18e 100%
+  );
+}
+.dreamy-2 {
+  background-image: linear-gradient(90deg, #e84e38 0%, #ba2cb8 100%);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
