@@ -10,7 +10,7 @@ import { Dialog, DialogContent } from "../ui/dialog";
 const TechStack = () => {
   return (
     <div id="tech-stack" className="mt-4 md:mt-10 py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-[708px] w-full mx-auto px-2 md:px-0">
+      <div className="relative items-center max-w-177 w-full mx-auto px-2 md:px-0">
         <div>
           <DesignedHeading
             heading="Tech Stack"
@@ -201,7 +201,7 @@ const SkillItem = ({
           </span>
           <img
             className={cn(
-              "absolute inset-0 box-border p-0 border-0 dark:filter-[invert(1)] m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full ",
+              "absolute inset-0 box-border p-0 border-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full ",
               isGrid ? "rounded-xl" : "rounded-[12px]",
             )}
             src={item.img}

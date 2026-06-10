@@ -47,6 +47,7 @@ const helpOptions = [
 ];
 
 function Contact() {
+  "use no memo";
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -84,43 +85,18 @@ function Contact() {
     }
   };
 
-  /* -------- Fake API Call -------- */
-  const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL!;
-  // const submitContactForm = async (data: ContactForm) => {
-  //   const response = await fetch(API_URL, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   });
-
-  //   const result = await response.json();
-
-  //   if (!result.success) {
-  //     throw new Error(result.error || "Submission failed");
-  //   }
-
-  //   return result;
-  // };
-
   const submitContactForm = async (data: ContactForm) => {
-    const formData = new FormData();
-
-    formData.append("name", data.name);
-    formData.append("workplace", data.workplace || "");
-    formData.append("email", data.email);
-    formData.append("phone", data.phone || "");
-    formData.append("source", data.source);
-    formData.append("helpWith", data.helpWith.join(", "));
-    formData.append("notes", data.notes || "");
-
-    const response = await fetch(API_URL, {
+    const response = await fetch("/api/contact", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     });
 
-    return response.text();
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.error || "Submission failed");
+    }
   };
 
   /* -------- Submit Handler -------- */
@@ -178,7 +154,7 @@ function Contact() {
                   />
                 </div>
 
-                <h3 className="text-base md:text-lg font-medium tracking-[-0.28px] text-center opacity-70 max-w-[300px]">
+                <h3 className="text-base md:text-lg font-medium tracking-[-0.28px] text-center opacity-70 max-w-75">
                   Drop your details below — I’ll reach out shortly.
                 </h3>
 
