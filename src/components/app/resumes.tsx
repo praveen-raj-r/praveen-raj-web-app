@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Copy, Download, ExternalLink } from "lucide-react";
 import toast from "react-hot-toast";

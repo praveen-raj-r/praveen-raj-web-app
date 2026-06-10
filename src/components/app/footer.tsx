@@ -1,3 +1,5 @@
+"use client";
+
 import FooterTag from "@/components/app/footer-tag";
 
 const Footer = () => {
@@ -54,11 +56,11 @@ const Footer = () => {
               Built using{" "}
               <a
                 className="font-semibold gradient sky-3"
-                href="https://vite.dev/"
+                href="https://nextjs.org/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Vite
+                Next.js
               </a>
               , coded in{" "}
               <a

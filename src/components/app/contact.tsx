@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -83,7 +85,7 @@ function Contact() {
   };
 
   /* -------- Fake API Call -------- */
-  const API_URL = import.meta.env.VITE_CONTACT_API_URL;
+  const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL!;
   // const submitContactForm = async (data: ContactForm) => {
   //   const response = await fetch(API_URL, {
   //     method: "POST",

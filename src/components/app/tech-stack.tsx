@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import techStacks, { badgeStyles } from "@/data/tech-stack";

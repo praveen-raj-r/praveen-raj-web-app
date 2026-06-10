@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "./logo";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";

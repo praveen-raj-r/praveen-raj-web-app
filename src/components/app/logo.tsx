@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "@/context/theme-provider";
 
 const Logo = ({ onClick }: { onClick: () => void }) => {
