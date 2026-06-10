@@ -1,8 +1,7 @@
 import { createServerSupabaseClient } from "@/lib/supabase-server";
-import LandingPage from "@/views/landing-page";
+import { Dashboard } from "./_components/dashboard";
 import type { SectionConfig, ContentConfig } from "@/types/site-config";
-
-export const dynamic = "force-dynamic";
+import type { Submission } from "./_components/dashboard";
 
 const DEFAULT_SECTIONS: SectionConfig = {
   intro: true,
@@ -18,13 +17,24 @@ const DEFAULT_CONTENT: ContentConfig = {
   availability_text: "Open to work",
 };
 
-export default async function Home() {
+export default async function AdminPage() {
   const supabase = createServerSupabaseClient();
-  const { data } = await supabase.from("site_config").select("key, value");
-  const config = Object.fromEntries((data ?? []).map((r) => [r.key, r.value]));
+
+  const [{ data: configRows }, { data: submissions }] = await Promise.all([
+    supabase.from("site_config").select("key, value"),
+    supabase
+      .from("contact_submissions")
+      .select("*")
+      .order("created_at", { ascending: false }),
+  ]);
+
+  const config = Object.fromEntries(
+    (configRows ?? []).map((r) => [r.key, r.value]),
+  );
 
   return (
-    <LandingPage
+    <Dashboard
+      submissions={(submissions ?? []) as Submission[]}
       sections={{ ...DEFAULT_SECTIONS, ...(config.sections as SectionConfig) }}
       content={{ ...DEFAULT_CONTENT, ...(config.content as ContentConfig) }}
     />

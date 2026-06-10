@@ -8,14 +8,22 @@ import {
 } from "@/components/ui/dialog";
 import { Github, Instagram, Linkedin } from "lucide-react";
 
-const Intro = () => {
+type IntroProps = {
+  availabilityVisible?: boolean;
+  availabilityText?: string;
+};
+
+const Intro = ({
+  availabilityVisible = true,
+  availabilityText = "Open to work",
+}: IntroProps) => {
   return (
     <>
       <div className="mt-5 px-0 pt-4">
-        <div className="max-w-[708px] w-full mx-auto relative items-center py-0 md:px-0 px-2">
+        <div className="max-w-177 w-full mx-auto relative items-center py-0 md:px-0 px-2">
           <div className="px-4 md:pt-4 md:pb-0 pt-1 pb-1">
             <div>
-              <h2 className="text-4xl md:text-[56px] font-light tracking-[-1.5px] md:tracking-[-2.5px] leading-8.5 md:leading-[54px] max-w-[640px] font-Fraunces">
+              <h2 className="text-4xl md:text-[56px] font-light tracking-[-1.5px] md:tracking-[-2.5px] leading-8.5 md:leading-13.5 max-w-160 font-Fraunces">
                 Hi <span className="animate-pulse">👋</span>, I’m
                 <Dialog>
                   <DialogTrigger className="cursor-pointer">
@@ -40,9 +48,15 @@ const Intro = () => {
         </div>
       </div>
       <div className="pb-12">
-        <div className="max-w-[708px] w-full mx-auto relative items-center py-0 md:px-0 px-2">
+        <div className="max-w-177 w-full mx-auto relative items-center py-0 md:px-0 px-2">
           <div className="px-4 md:pb-0 pb-1">
             <div>
+              {availabilityVisible && (
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  {availabilityText}
+                </div>
+              )}
               <div className="flex flex-row items-center gap-5 my-5 mx-0">
                 {[
                   {
@@ -77,7 +91,7 @@ const Intro = () => {
                   );
                 })}
               </div>
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-[640px]">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
                 Hey! 👋 I’m Praveen Raj, a{" "}
                 <span className="font-semibold gradient sky-2">
                   frontend engineer
@@ -93,7 +107,7 @@ const Intro = () => {
                 .
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-[640px]">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
                 I build modern,{" "}
                 <span className="font-semibold gradient retro-2">
                   Single Page Applications (SPAs), SaaS products, and Corporate
@@ -106,7 +120,7 @@ const Intro = () => {
                 , and crafted with intention.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-[640px]">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
                 For me, great frontend isn’t just design. It’s{" "}
                 <span className="font-semibold gradient retro-2">
                   clean architecture
@@ -122,7 +136,7 @@ const Intro = () => {
                 that grow beautifully over time.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-[640px]">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
                 From planning every detail to polishing the final interaction, I
                 focus on one thing: building{" "}
                 <span className="font-semibold gradient retro-3">
