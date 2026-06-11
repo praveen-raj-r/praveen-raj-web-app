@@ -232,7 +232,6 @@ export function PostsTab() {
           <label className="text-xs text-white/40">Cover image</label>
           {form.cover_image ? (
             <div className="relative rounded-lg overflow-hidden aspect-video bg-white/5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={form.cover_image} alt="Cover" className="w-full h-full object-cover" />
               <button
                 onClick={() => set("cover_image", "")}
