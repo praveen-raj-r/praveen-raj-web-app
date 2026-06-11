@@ -8,7 +8,7 @@ const DesignedHeading = ({
   description: string;
 }) => {
   return (
-    <div className="text-center max-w-[500px] m-auto p-6 flex flex-col items-center ">
+    <div className="text-center max-w-125 m-auto p-6 flex flex-col items-center ">
       <h2 className="gradient leading-[1.2] rainbow-2 inline-block text-4xl font-medium mb-3 tracking-[-1.2px] font-Fraunces max-md:mb-1 max-md:text-[30px] max-md:tracking-[-1px]">
         {heading}
       </h2>

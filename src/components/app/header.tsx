@@ -63,9 +63,9 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="max-w-[708px] mx-auto sticky top-0 z-50">
+    <div className="max-w-177 mx-auto sticky top-0 z-50">
       <div className="pt-6 px-2">
-        <div className="bg-[#120c1b4c] px-[30px] py-4 rounded-[36px] flex justify-between backdrop-blur-[44px] shadow-[inset_0px_0px_8px_#ffffff14]">
+        <div className="bg-[#120c1b4c] px-7.5 py-4 rounded-[36px] flex justify-between backdrop-blur-[44px] shadow-[inset_0px_0px_8px_#ffffff14]">
           {/* ✅ Logo */}
           <Logo onClick={scrollToTop} />
 
