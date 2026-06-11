@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Plus, ArrowLeft, Trash2, ExternalLink } from "lucide-react";
+import { Plus, ArrowLeft, Trash2, ExternalLink, Upload, X } from "lucide-react";
 
 type Post = {
   id: string;
@@ -11,6 +11,7 @@ type Post = {
   category: string;
   excerpt: string;
   content: string;
+  cover_image: string | null;
   published: boolean;
   published_at: string;
 };
@@ -23,6 +24,7 @@ const EMPTY: FormState = {
   category: "",
   excerpt: "",
   content: "",
+  cover_image: null,
   published: false,
   published_at: new Date().toISOString().split("T")[0],
 };
@@ -49,6 +51,8 @@ export function PostsTab() {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch("/api/admin/posts")
@@ -69,6 +73,17 @@ export function PostsTab() {
       title: v,
       slug: editing === "new" ? slugify(v) : f.slug,
     }));
+  };
+
+  const handleImageUpload = async (file: File) => {
+    setUploading(true);
+    const fd = new FormData();
+    fd.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+    const json = await res.json();
+    if (!res.ok) { alert(json.error); setUploading(false); return; }
+    set("cover_image", json.url);
+    setUploading(false);
   };
 
   const handleSave = async () => {
@@ -212,6 +227,49 @@ export function PostsTab() {
 
       {/* Form */}
       <div className="rounded-xl border border-white/7 bg-white/3 p-5 space-y-4">
+        {/* Cover image */}
+        <div className="space-y-1.5">
+          <label className="text-xs text-white/40">Cover image</label>
+          {form.cover_image ? (
+            <div className="relative rounded-lg overflow-hidden aspect-video bg-white/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={form.cover_image} alt="Cover" className="w-full h-full object-cover" />
+              <button
+                onClick={() => set("cover_image", "")}
+                className="absolute top-2 right-2 p-1 rounded-full bg-black/60 hover:bg-black/80 transition"
+              >
+                <X className="size-3.5 text-white" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              className="flex items-center gap-2 w-full justify-center py-8 rounded-lg border border-dashed border-white/15 hover:border-white/30 text-sm text-white/40 hover:text-white/60 transition disabled:opacity-40"
+            >
+              <Upload className="size-4" />
+              {uploading ? "Uploading…" : "Upload image"}
+            </button>
+          )}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) handleImageUpload(file);
+              e.target.value = "";
+            }}
+          />
+          <input
+            value={form.cover_image ?? ""}
+            onChange={(e) => set("cover_image", e.target.value)}
+            placeholder="Or paste an image URL"
+            className="w-full bg-white/5 border border-white/8 rounded-lg px-3.5 py-2 text-xs text-white/60 outline-none focus:border-white/20 transition placeholder:text-white/25 font-mono"
+          />
+        </div>
+
         {/* Title */}
         <div className="space-y-1.5">
           <label className="text-xs text-white/40">Title</label>

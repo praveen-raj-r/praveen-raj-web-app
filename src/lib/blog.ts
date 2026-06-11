@@ -7,6 +7,7 @@ export type BlogPostMeta = {
   category: string;
   excerpt: string;
   published_at: string;
+  cover_image: string | null;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -18,7 +19,7 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
   const supabase = createServerSupabaseClient();
   const { data } = await supabase
     .from("blog_posts")
-    .select("id, slug, title, category, excerpt, published_at")
+    .select("id, slug, title, category, excerpt, published_at, cover_image")
     .eq("published", true)
     .order("published_at", { ascending: false });
   return data ?? [];
@@ -28,7 +29,7 @@ export async function getRecentPosts(n = 6): Promise<BlogPostMeta[]> {
   const supabase = createServerSupabaseClient();
   const { data } = await supabase
     .from("blog_posts")
-    .select("id, slug, title, category, excerpt, published_at")
+    .select("id, slug, title, category, excerpt, published_at, cover_image")
     .eq("published", true)
     .order("published_at", { ascending: false })
     .limit(n);

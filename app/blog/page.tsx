@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, fmtDate } from "@/lib/blog";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
@@ -37,13 +38,24 @@ export default async function BlogListPage() {
         {posts.length === 0 ? (
           <p className="text-black/40 dark:text-white/40">No posts yet.</p>
         ) : (
-          <div className="flex flex-col">
-            {posts.map((post, i) => (
+          <div className="flex flex-col gap-8">
+            {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className={`group flex items-start justify-between gap-6 py-5 ${i !== 0 ? "border-t border-black/8 dark:border-white/8" : ""} hover:opacity-80 transition-opacity`}
+                className="group flex flex-col sm:flex-row items-start gap-5 hover:opacity-90 transition-opacity"
               >
+                {post.cover_image && (
+                  <div className="relative w-full sm:w-36 shrink-0 aspect-video sm:aspect-square rounded-xl overflow-hidden bg-black/5 dark:bg-white/5">
+                    <Image
+                      src={post.cover_image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, 144px"
+                    />
+                  </div>
+                )}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-xs text-black/40 dark:text-white/30">
@@ -61,7 +73,7 @@ export default async function BlogListPage() {
                     {post.excerpt}
                   </p>
                 </div>
-                <ArrowRight className="size-4 text-black/30 dark:text-white/20 shrink-0 mt-1 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4 text-black/30 dark:text-white/20 shrink-0 mt-1 transition-transform group-hover:translate-x-1 hidden sm:block" />
               </Link>
             ))}
           </div>

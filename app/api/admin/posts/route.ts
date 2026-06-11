@@ -5,7 +5,7 @@ export async function GET() {
   const supabase = createServerSupabaseClient();
   const { data, error } = await supabase
     .from("blog_posts")
-    .select("id, slug, title, category, excerpt, published, published_at, created_at")
+    .select("id, slug, title, category, excerpt, content, cover_image, published, published_at, created_at")
     .order("published_at", { ascending: false });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });

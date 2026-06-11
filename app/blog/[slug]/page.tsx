@@ -1,6 +1,7 @@
 import { getPost, fmtDate } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { marked } from "marked";
 import type { Metadata } from "next";
@@ -15,7 +16,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  return { title: `${post.title} — Praveen Raj`, description: post.excerpt };
+  return {
+    title: `${post.title} — Praveen Raj`,
+    description: post.excerpt,
+    openGraph: post.cover_image ? { images: [post.cover_image] } : undefined,
+  };
 }
 
 export default async function BlogPostPage({
@@ -56,6 +61,20 @@ export default async function BlogPostPage({
             {post.title}
           </h1>
         </div>
+
+        {/* Cover image */}
+        {post.cover_image && (
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 bg-black/5 dark:bg-white/5">
+            <Image
+              src={post.cover_image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 672px) 100vw, 672px"
+            />
+          </div>
+        )}
 
         {/* Content */}
         <div

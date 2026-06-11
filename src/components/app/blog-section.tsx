@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getRecentPosts, fmtDate } from "@/lib/blog";
 import DesignedHeading from "@/components/app/designed-heading";
 import { ArrowRight } from "lucide-react";
@@ -21,29 +22,43 @@ const BlogSection = async () => {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-3 p-5 rounded-2xl border border-black/10 dark:border-white/8 bg-black/2 dark:bg-white/3 hover:border-black/20 dark:hover:border-white/15 hover:bg-black/4 dark:hover:bg-white/5 transition-all duration-200"
+              className="group flex flex-col rounded-2xl border border-black/10 dark:border-white/8 bg-black/2 dark:bg-white/3 hover:border-black/20 dark:hover:border-white/15 hover:bg-black/4 dark:hover:bg-white/5 transition-all duration-200 overflow-hidden"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
-                  {post.category}
-                </span>
-                <span className="text-xs text-black/40 dark:text-white/30">
-                  {fmtDate(post.published_at)}
+              {post.cover_image && (
+                <div className="relative w-full aspect-video overflow-hidden">
+                  <Image
+                    src={post.cover_image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+              )}
+
+              <div className="flex flex-col gap-3 p-5 flex-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-black/40 dark:text-white/30">
+                    {fmtDate(post.published_at)}
+                  </span>
+                </div>
+
+                <h3 className="font-semibold text-[15px] leading-snug tracking-[-0.3px] text-[#22242C] dark:text-white group-hover:text-black dark:group-hover:text-white line-clamp-2">
+                  {post.title}
+                </h3>
+
+                <p className="text-sm text-[#22242C]/60 dark:text-white/50 leading-relaxed line-clamp-3 flex-1">
+                  {post.excerpt}
+                </p>
+
+                <span className="text-xs font-medium text-[#22242C]/50 dark:text-white/40 group-hover:text-[#22242C] dark:group-hover:text-white flex items-center gap-1 transition-colors mt-auto">
+                  Read more
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
-
-              <h3 className="font-semibold text-[15px] leading-snug tracking-[-0.3px] text-[#22242C] dark:text-white group-hover:text-black dark:group-hover:text-white line-clamp-2">
-                {post.title}
-              </h3>
-
-              <p className="text-sm text-[#22242C]/60 dark:text-white/50 leading-relaxed line-clamp-3 flex-1">
-                {post.excerpt}
-              </p>
-
-              <span className="text-xs font-medium text-[#22242C]/50 dark:text-white/40 group-hover:text-[#22242C] dark:group-hover:text-white flex items-center gap-1 transition-colors mt-auto">
-                Read more
-                <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
-              </span>
             </Link>
           ))}
         </div>
