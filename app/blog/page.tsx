@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getAllPosts, fmtDate } from "@/lib/blog";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import Texture from "@/components/app/texture";
 
 export const metadata: Metadata = {
   title: "Blog — Praveen Raj",
@@ -13,7 +14,7 @@ export default async function BlogListPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0a0a0a] text-[#22242C] dark:text-white font-inter">
+    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),_url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
       <div className="max-w-2xl mx-auto px-4 py-16 md:py-24">
         {/* Back */}
         <Link
@@ -79,6 +80,7 @@ export default async function BlogListPage() {
           </div>
         )}
       </div>
+      <Texture />
     </main>
   );
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { marked } from "marked";
 import type { Metadata } from "next";
+import Texture from "@/components/app/texture";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +36,7 @@ export default async function BlogPostPage({
   const html = await marked(post.content);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0a0a0a] text-[#22242C] dark:text-white font-inter">
+    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),_url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
       <div className="max-w-2xl mx-auto px-4 py-16 md:py-24">
         {/* Back */}
         <Link
@@ -60,11 +61,14 @@ export default async function BlogPostPage({
           <h1 className="text-3xl md:text-4xl font-light tracking-[-1.2px] font-Fraunces leading-tight">
             {post.title}
           </h1>
+          <p className="mt-3 text-base text-black/50 dark:text-white/50 leading-relaxed">
+            {post.excerpt}
+          </p>
         </div>
 
         {/* Cover image */}
         {post.cover_image && (
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 bg-black/5 dark:bg-white/5">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 bg-black/5 dark:bg-white/5 shadow-sm">
             <Image
               src={post.cover_image}
               alt={post.title}
@@ -93,6 +97,7 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </div>
+      <Texture />
     </main>
   );
 }
