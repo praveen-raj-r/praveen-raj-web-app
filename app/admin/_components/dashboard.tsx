@@ -18,7 +18,9 @@ import {
   X,
   Eye,
   EyeOff,
+  PenLine,
 } from "lucide-react";
+import { PostsTab } from "./posts-tab";
 
 export type { SectionConfig, ContentConfig };
 
@@ -49,10 +51,11 @@ const SECTION_META: Record<
 
 const NAV = [
   { id: "Submissions" as const, label: "Submissions", Icon: Mail },
-  { id: "Sections" as const, label: "Sections", Icon: SlidersHorizontal },
-  { id: "Content" as const, label: "Content", Icon: Type },
+  { id: "Posts"       as const, label: "Posts",       Icon: PenLine },
+  { id: "Sections"    as const, label: "Sections",    Icon: SlidersHorizontal },
+  { id: "Content"     as const, label: "Content",     Icon: Type },
 ];
-type Tab = "Submissions" | "Sections" | "Content";
+type Tab = "Submissions" | "Posts" | "Sections" | "Content";
 
 /* ─── helpers ─── */
 function thisMonth(submissions: Submission[]) {
@@ -383,6 +386,9 @@ export function Dashboard({
 
         {/* Content */}
         <main className="flex-1 overflow-y-auto p-5 md:p-7">
+          {/* ── Posts ── */}
+          {tab === "Posts" && <PostsTab />}
+
           {/* ── Submissions ── */}
           {tab === "Submissions" && (
             <div className="space-y-5 max-w-3xl">

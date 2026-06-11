@@ -3,8 +3,8 @@ import { getRecentPosts, fmtDate } from "@/lib/blog";
 import DesignedHeading from "@/components/app/designed-heading";
 import { ArrowRight } from "lucide-react";
 
-const BlogSection = () => {
-  const posts = getRecentPosts(6);
+const BlogSection = async () => {
+  const posts = await getRecentPosts(6);
 
   if (posts.length === 0) return null;
 
@@ -28,7 +28,7 @@ const BlogSection = () => {
                   {post.category}
                 </span>
                 <span className="text-xs text-black/40 dark:text-white/30">
-                  {fmtDate(post.date)}
+                  {fmtDate(post.published_at)}
                 </span>
               </div>
 

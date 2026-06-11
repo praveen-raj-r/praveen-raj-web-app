@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "Thoughts on frontend engineering, React, CSS, and building modern web applications.",
 };
 
-export default function BlogListPage() {
-  const posts = getAllPosts();
+export default async function BlogListPage() {
+  const posts = await getAllPosts();
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#0a0a0a] text-[#22242C] dark:text-white font-inter">
@@ -47,7 +47,7 @@ export default function BlogListPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-xs text-black/40 dark:text-white/30">
-                      {fmtDate(post.date)}
+                      {fmtDate(post.published_at)}
                     </span>
                     <span className="text-black/20 dark:text-white/20">·</span>
                     <span className="text-xs font-medium text-black/50 dark:text-white/50">

@@ -1,61 +1,49 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
-const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
+import { createServerSupabaseClient } from "@/lib/supabase-server";
 
 export type BlogPostMeta = {
+  id: string;
   slug: string;
   title: string;
-  date: string;
   category: string;
   excerpt: string;
+  published_at: string;
 };
 
 export type BlogPost = BlogPostMeta & {
   content: string;
+  published: boolean;
 };
 
-export function getAllPosts(): BlogPostMeta[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
-
-  return fs
-    .readdirSync(BLOG_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((file) => {
-      const slug = file.replace(/\.md$/, "");
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
-      const { data } = matter(raw);
-      return {
-        slug,
-        title: data.title as string,
-        date: data.date as string,
-        category: data.category as string,
-        excerpt: data.excerpt as string,
-      };
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export async function getAllPosts(): Promise<BlogPostMeta[]> {
+  const supabase = createServerSupabaseClient();
+  const { data } = await supabase
+    .from("blog_posts")
+    .select("id, slug, title, category, excerpt, published_at")
+    .eq("published", true)
+    .order("published_at", { ascending: false });
+  return data ?? [];
 }
 
-export function getRecentPosts(n = 6): BlogPostMeta[] {
-  return getAllPosts().slice(0, n);
+export async function getRecentPosts(n = 6): Promise<BlogPostMeta[]> {
+  const supabase = createServerSupabaseClient();
+  const { data } = await supabase
+    .from("blog_posts")
+    .select("id, slug, title, category, excerpt, published_at")
+    .eq("published", true)
+    .order("published_at", { ascending: false })
+    .limit(n);
+  return data ?? [];
 }
 
-export function getPost(slug: string): BlogPost | null {
-  const file = path.join(BLOG_DIR, `${slug}.md`);
-  if (!fs.existsSync(file)) return null;
-
-  const raw = fs.readFileSync(file, "utf-8");
-  const { data, content } = matter(raw);
-
-  return {
-    slug,
-    title: data.title as string,
-    date: data.date as string,
-    category: data.category as string,
-    excerpt: data.excerpt as string,
-    content,
-  };
+export async function getPost(slug: string): Promise<BlogPost | null> {
+  const supabase = createServerSupabaseClient();
+  const { data } = await supabase
+    .from("blog_posts")
+    .select("*")
+    .eq("slug", slug)
+    .eq("published", true)
+    .single();
+  return data ?? null;
 }
 
 export function fmtDate(date: string) {

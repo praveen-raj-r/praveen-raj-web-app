@@ -1,13 +1,11 @@
-import { getAllPosts, getPost, fmtDate } from "@/lib/blog";
+import { getPost, fmtDate } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { marked } from "marked";
 import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -15,7 +13,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return { title: `${post.title} — Praveen Raj`, description: post.excerpt };
 }
@@ -26,7 +24,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
 
   const html = await marked(post.content);
@@ -47,7 +45,7 @@ export default async function BlogPostPage({
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs text-black/40 dark:text-white/30">
-              {fmtDate(post.date)}
+              {fmtDate(post.published_at)}
             </span>
             <span className="text-black/20 dark:text-white/20">·</span>
             <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
