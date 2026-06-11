@@ -191,3 +191,22 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ── Blog post prose ── */
+.blog-prose { line-height: 1.75; }
+.blog-prose p  { margin-bottom: 1.25rem; opacity: 0.85; }
+.blog-prose h2 { font-size: 1.4rem; font-weight: 600; margin: 2rem 0 0.75rem; letter-spacing: -0.4px; }
+.blog-prose h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.5rem; letter-spacing: -0.3px; }
+.blog-prose ul, .blog-prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.blog-prose li { margin-bottom: 0.4rem; opacity: 0.85; }
+.blog-prose ul li { list-style-type: disc; }
+.blog-prose ol li { list-style-type: decimal; }
+.blog-prose pre { background: rgba(0,0,0,0.06); border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; margin-bottom: 1.25rem; font-size: 0.875rem; }
+.dark .blog-prose pre { background: rgba(255,255,255,0.06); }
+.blog-prose code { font-family: monospace; font-size: 0.875em; background: rgba(0,0,0,0.06); padding: 0.15em 0.4em; border-radius: 4px; }
+.dark .blog-prose code { background: rgba(255,255,255,0.08); }
+.blog-prose pre code { background: none; padding: 0; }
+.blog-prose blockquote { border-left: 3px solid rgba(0,0,0,0.15); padding-left: 1rem; opacity: 0.7; margin-bottom: 1.25rem; }
+.dark .blog-prose blockquote { border-left-color: rgba(255,255,255,0.15); }
+.blog-prose a { text-decoration: underline; opacity: 0.8; }
+.blog-prose strong { font-weight: 600; opacity: 1; }

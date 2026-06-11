@@ -43,6 +43,7 @@ const SECTION_META: Record<
   projects: { label: "Projects", emoji: "🛠" },
   timeline: { label: "Timeline", emoji: "🗓" },
   tech_stack: { label: "Tech Stack", emoji: "⚙️" },
+  blog: { label: "Blog", emoji: "✍️" },
   contact: { label: "Contact", emoji: "✉️" },
 };
 
@@ -254,7 +255,7 @@ function Sidebar({
             )}
             {id === "Sections" && (
               <span className="ml-auto text-xs text-white/30">
-                {visibleCount}/6
+                {visibleCount}/{Object.keys(SECTION_META).length}
               </span>
             )}
           </button>
@@ -427,8 +428,8 @@ export function Dashboard({
           {tab === "Sections" && (
             <div className="max-w-md space-y-4">
               <p className="text-xs text-white/40">
-                {visibleCount} of 6 sections visible on the site. Changes apply
-                on next page load.
+                {visibleCount} of {Object.keys(SECTION_META).length} sections
+                visible on the site. Changes apply on next page load.
               </p>
               <div className="space-y-2">
                 {(Object.keys(SECTION_META) as (keyof SectionConfig)[]).map(

@@ -10,6 +10,7 @@ const DEFAULT_SECTIONS: SectionConfig = {
   projects: true,
   timeline: true,
   tech_stack: true,
+  blog: true,
   contact: true,
 };
 

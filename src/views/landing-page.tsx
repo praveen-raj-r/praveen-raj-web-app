@@ -7,6 +7,7 @@ import Resumes from "@/components/app/resumes";
 import TechStack from "@/components/app/tech-stack";
 import Texture from "@/components/app/texture";
 import Timeline from "@/components/app/timeline";
+import BlogSection from "@/components/app/blog-section";
 import type { SectionConfig, ContentConfig } from "@/types/site-config";
 
 type Props = {
@@ -29,6 +30,7 @@ const LandingPage = ({ sections = {}, content = {} }: Props) => {
       {s.projects !== false && <Projects />}
       {s.timeline !== false && <Timeline />}
       {s.tech_stack !== false && <TechStack />}
+      {s.blog !== false && <BlogSection />}
       {s.contact !== false && <Contact />}
       <Footer />
       <Texture />

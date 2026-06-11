@@ -4,6 +4,7 @@ export type SectionConfig = {
   projects: boolean;
   timeline: boolean;
   tech_stack: boolean;
+  blog: boolean;
   contact: boolean;
 };
 
