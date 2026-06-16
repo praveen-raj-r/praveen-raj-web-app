@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
-import { marked } from "marked";
+import { renderMarkdown } from "@/lib/markdown";
 import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
 
@@ -33,7 +33,7 @@ export default async function BlogPostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const html = await marked(post.content);
+  const html = await renderMarkdown(post.content);
 
   return (
     <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),_url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
