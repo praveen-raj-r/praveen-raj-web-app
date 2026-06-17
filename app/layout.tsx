@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "Experienced Frontend Engineer skilled in React.js, Tailwind CSS, and modern web development.",
   authors: [{ name: "Praveen Raj" }],
   keywords: ["Frontend engineer", "React", "CSS", "JavaScript", "Chennai"],
+  verification: {
+    google: "nosYX6tKm-AWWpD_Pkktfaq2Cg1XxWcZn3UzSk8WxFw",
+  },
 };
 
 export default function RootLayout({
