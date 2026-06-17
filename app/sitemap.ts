@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .order("published_at", { ascending: false });
 
   const blogEntries: MetadataRoute.Sitemap = (posts ?? []).map((post) => ({
-    url: `https://praveenraj.in/blog/${post.slug}`,
+    url: `https://praveen-raj.vercel.app/blog/${post.slug}`,
     lastModified: new Date(post.updated_at ?? post.published_at),
     changeFrequency: "monthly",
     priority: 0.8,
@@ -20,13 +20,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: "https://praveenraj.in",
+      url: "https://praveen-raj.vercel.app",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://praveenraj.in/blog",
+      url: "https://praveen-raj.vercel.app/blog",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,

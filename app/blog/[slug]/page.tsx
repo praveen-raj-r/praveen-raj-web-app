@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  const url = `https://praveenraj.in/blog/${post.slug}`;
+  const url = `https://praveen-raj.vercel.app/blog/${post.slug}`;
   return {
     title: `${post.title} — Praveen Raj`,
     description: post.excerpt,
@@ -110,14 +110,14 @@ export default async function BlogPostPage({
               author: {
                 "@type": "Person",
                 name: "Praveen Raj",
-                url: "https://praveenraj.in",
+                url: "https://praveen-raj.vercel.app",
               },
               publisher: {
                 "@type": "Person",
                 name: "Praveen Raj",
-                url: "https://praveenraj.in",
+                url: "https://praveen-raj.vercel.app",
               },
-              url: `https://praveenraj.in/blog/${post.slug}`,
+              url: `https://praveen-raj.vercel.app/blog/${post.slug}`,
               ...(post.cover_image && { image: post.cover_image }),
             }),
           }}

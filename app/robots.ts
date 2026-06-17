@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin", "/admin/", "/api/"],
       },
     ],
-    sitemap: "https://praveenraj.in/sitemap.xml",
+    sitemap: "https://praveen-raj.vercel.app/sitemap.xml",
   };
 }
