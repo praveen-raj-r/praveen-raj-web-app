@@ -17,10 +17,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
+  const url = `https://praveenraj.in/blog/${post.slug}`;
   return {
     title: `${post.title} — Praveen Raj`,
     description: post.excerpt,
-    openGraph: post.cover_image ? { images: [post.cover_image] } : undefined,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.published_at,
+      authors: ["Praveen Raj"],
+      ...(post.cover_image && { images: [{ url: post.cover_image, width: 1200, height: 630 }] }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      ...(post.cover_image && { images: [post.cover_image] }),
+    },
   };
 }
 
@@ -36,7 +52,7 @@ export default async function BlogPostPage({
   const html = await renderMarkdown(post.content);
 
   return (
-    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),_url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
+    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/blog-top-gradient.svg'),url('/blog-bottom-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
       <div className="max-w-2xl mx-auto px-4 py-16 md:py-24">
         {/* Back */}
         <Link
@@ -79,6 +95,33 @@ export default async function BlogPostPage({
             />
           </div>
         )}
+
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.excerpt,
+              datePublished: post.published_at,
+              dateModified: post.published_at,
+              author: {
+                "@type": "Person",
+                name: "Praveen Raj",
+                url: "https://praveenraj.in",
+              },
+              publisher: {
+                "@type": "Person",
+                name: "Praveen Raj",
+                url: "https://praveenraj.in",
+              },
+              url: `https://praveenraj.in/blog/${post.slug}`,
+              ...(post.cover_image && { image: post.cover_image }),
+            }),
+          }}
+        />
 
         {/* Content */}
         <div
