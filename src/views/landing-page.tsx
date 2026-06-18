@@ -28,9 +28,9 @@ const LandingPage = ({ sections = {}, content = {} }: Props) => {
       )}
       {s.resumes !== false && <Resumes />}
       {s.projects !== false && <Projects />}
+      {s.blog !== false && <BlogSection />}
       {s.timeline !== false && <Timeline />}
       {s.tech_stack !== false && <TechStack />}
-      {s.blog !== false && <BlogSection />}
       {s.contact !== false && <Contact />}
       <Footer />
       <Texture />
