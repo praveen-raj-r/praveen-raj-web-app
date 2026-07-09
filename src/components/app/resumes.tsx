@@ -47,7 +47,7 @@ const Resumes = () => {
 
   return (
     <div id="resume" className="scroll-mt-40">
-      <div className="max-w-[708px] w-full mx-auto relative items-center md:px-0 px-2">
+      <div className="max-w-177 w-full mx-auto relative items-center md:px-0 px-2">
         <div className="px-4 md:pb-0 pb-1">
           <ul className="flex flex-wrap items-center gap-2 mb-6">
             {[

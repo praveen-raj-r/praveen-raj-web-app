@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const Projects = () => {
   return (
     <div id="projects" className="py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-[708px] w-full mx-auto px-2 sm:px-0">
+      <div className="relative items-center max-w-177 w-full mx-auto px-2 sm:px-0">
         <div>
           <DesignedHeading
             heading="Projects"
@@ -26,7 +26,7 @@ const Projects = () => {
                   {/* 1. IMAGE LAYER */}
                   <div className="relative w-full z-10 transition-all duration-500 ease-out group-hover:blur-md group-hover:scale-110 group-hover:opacity-40 ">
                     <img
-                      className=" size-[100px] mx-auto rounded-[18px] shadow-[0px_2.9px_5.7px_#00000033,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000026,0px_37.1px_15px_#000000c] dark:shadow-[0px_2.9px_5.7px_#0000004c,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000033,0px_37.1px_15px_#00000033]"
+                      className=" size-25 mx-auto rounded-[18px] shadow-[0px_2.9px_5.7px_#00000033,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000026,0px_37.1px_15px_#000000c] dark:shadow-[0px_2.9px_5.7px_#0000004c,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000033,0px_37.1px_15px_#00000033]"
                       src={project.image}
                       alt=""
                     />

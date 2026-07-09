@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getRecentPosts, fmtDate } from "@/lib/blog";
 import DesignedHeading from "@/components/app/designed-heading";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 
 const BlogSection = async () => {
   const posts = await getRecentPosts(6);
@@ -41,9 +41,15 @@ const BlogSection = async () => {
                   <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
                     {post.category}
                   </span>
-                  <span className="text-xs text-black/40 dark:text-white/30">
-                    {fmtDate(post.published_at)}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1 text-xs text-black/35 dark:text-white/25">
+                      <Eye className="size-3" />
+                      {post.views.toLocaleString()}
+                    </span>
+                    <span className="text-xs text-black/40 dark:text-white/30">
+                      {fmtDate(post.published_at)}
+                    </span>
+                  </div>
                 </div>
 
                 <h3 className="font-semibold text-[15px] leading-snug tracking-[-0.3px] text-[#22242C] dark:text-white group-hover:text-black dark:group-hover:text-white line-clamp-2">

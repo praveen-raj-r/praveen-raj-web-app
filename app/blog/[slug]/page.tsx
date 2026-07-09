@@ -2,10 +2,11 @@ import { getPost, fmtDate } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Eye } from "lucide-react";
 import { renderMarkdown } from "@/lib/markdown";
 import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
+import ViewTracker from "@/components/app/view-tracker";
 
 export const dynamic = "force-dynamic";
 
@@ -63,6 +64,8 @@ export default async function BlogPostPage({
           All posts
         </Link>
 
+        <ViewTracker slug={post.slug} />
+
         {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
@@ -72,6 +75,11 @@ export default async function BlogPostPage({
             <span className="text-black/20 dark:text-white/20">·</span>
             <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
               {post.category}
+            </span>
+            <span className="text-black/20 dark:text-white/20">·</span>
+            <span className="inline-flex items-center gap-1 text-xs text-black/40 dark:text-white/30">
+              <Eye className="size-3" />
+              {post.views.toLocaleString()}
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-light tracking-[-1.2px] font-Fraunces leading-tight">

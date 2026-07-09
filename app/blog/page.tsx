@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, fmtDate } from "@/lib/blog";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
 
@@ -65,6 +65,11 @@ export default async function BlogListPage() {
                     <span className="text-black/20 dark:text-white/20">·</span>
                     <span className="text-xs font-medium text-black/50 dark:text-white/50">
                       {post.category}
+                    </span>
+                    <span className="text-black/20 dark:text-white/20">·</span>
+                    <span className="inline-flex items-center gap-1 text-xs text-black/40 dark:text-white/30">
+                      <Eye className="size-3" />
+                      {post.views.toLocaleString()}
                     </span>
                   </div>
                   <h2 className="font-semibold text-base md:text-lg tracking-[-0.3px] leading-snug mb-1">
