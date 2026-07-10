@@ -4,6 +4,7 @@ import { getAllPosts, fmtDate } from "@/lib/blog";
 import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
+import BlogCoverPlaceholder from "@/components/app/blog-cover-placeholder";
 
 export const metadata: Metadata = {
   title: "Blog — Praveen Raj",
@@ -40,14 +41,14 @@ export default async function BlogListPage() {
           <p className="text-black/40 dark:text-white/40">No posts yet.</p>
         ) : (
           <div className="flex flex-col gap-8">
-            {posts.map((post) => (
+            {posts.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group flex flex-col sm:flex-row items-start gap-5 hover:opacity-90 transition-opacity"
               >
-                {post.cover_image && (
-                  <div className="relative w-full sm:w-36 shrink-0 aspect-video sm:aspect-square rounded-xl overflow-hidden bg-black/5 dark:bg-white/5">
+                <div className="relative w-full sm:w-36 shrink-0 aspect-video rounded-xl overflow-hidden bg-black/5 dark:bg-white/5">
+                  {post.cover_image ? (
                     <Image
                       src={post.cover_image}
                       alt={post.title}
@@ -55,8 +56,10 @@ export default async function BlogListPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 640px) 100vw, 144px"
                     />
-                  </div>
-                )}
+                  ) : (
+                    <BlogCoverPlaceholder index={i} />
+                  )}
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-xs text-black/40 dark:text-white/30">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getRecentPosts, fmtDate } from "@/lib/blog";
 import DesignedHeading from "@/components/app/designed-heading";
+import BlogCoverPlaceholder from "@/components/app/blog-cover-placeholder";
 import { ArrowRight, Eye } from "lucide-react";
 
 const BlogSection = async () => {
@@ -18,14 +19,15 @@ const BlogSection = async () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
               className="group flex flex-col rounded-2xl border border-black/10 dark:border-white/8 bg-black/2 dark:bg-white/3 hover:border-black/20 dark:hover:border-white/15 hover:bg-black/4 dark:hover:bg-white/5 transition-all duration-200 overflow-hidden"
             >
-              {post.cover_image && (
-                <div className="relative w-full aspect-video overflow-hidden">
+              {/* Cover image — always rendered */}
+              <div className="relative w-full aspect-video overflow-hidden shrink-0">
+                {post.cover_image ? (
                   <Image
                     src={post.cover_image}
                     alt={post.title}
@@ -33,23 +35,24 @@ const BlogSection = async () => {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                </div>
-              )}
+                ) : (
+                  <BlogCoverPlaceholder index={i} />
+                )}
+              </div>
 
               <div className="flex flex-col gap-3 p-5 flex-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60">
+                {/* Meta row — category left, views+date right, no wrap */}
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/6 dark:bg-white/8 text-black/60 dark:text-white/60 truncate min-w-0">
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 text-xs text-black/35 dark:text-white/25">
-                      <Eye className="size-3" />
-                      {post.views.toLocaleString()}
-                    </span>
-                    <span className="text-xs text-black/40 dark:text-white/30">
-                      {fmtDate(post.published_at)}
-                    </span>
-                  </div>
+                  <span className="shrink-0 inline-flex items-center gap-1 text-xs text-black/35 dark:text-white/25 ml-auto">
+                    <Eye className="size-3" />
+                    {post.views.toLocaleString()}
+                  </span>
+                  <span className="shrink-0 text-xs text-black/40 dark:text-white/30 whitespace-nowrap">
+                    {fmtDate(post.published_at)}
+                  </span>
                 </div>
 
                 <h3 className="font-semibold text-[15px] leading-snug tracking-[-0.3px] text-[#22242C] dark:text-white group-hover:text-black dark:group-hover:text-white line-clamp-2">
