@@ -6,16 +6,33 @@ import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
 import BlogCoverPlaceholder from "@/components/app/blog-cover-placeholder";
 
+const BLOG_URL = "https://praveen-raj.vercel.app/blog";
+
 export const metadata: Metadata = {
   title: "Blog — Praveen Raj",
   description: "Thoughts on frontend engineering, React, CSS, and building modern web applications.",
+  alternates: { canonical: BLOG_URL },
+  openGraph: {
+    type: "website",
+    url: BLOG_URL,
+    siteName: "Praveen Raj",
+    title: "Blog — Praveen Raj",
+    description: "Thoughts on frontend engineering, React, CSS, and building modern web applications.",
+    images: [{ url: "/og?title=Blog&sub=Frontend+engineering+%26+CSS+deep+dives", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — Praveen Raj",
+    description: "Thoughts on frontend engineering, React, CSS, and building modern web applications.",
+    images: ["/og?title=Blog&sub=Frontend+engineering+%26+CSS+deep+dives"],
+  },
 };
 
 export default async function BlogListPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),_url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
+    <main className="min-h-screen relative before:content-[''] before:absolute before:inset-0 before:-z-50 before:bg-[url('/header-gradient.svg'),url('/footer-gradient.svg')] before:bg-no-repeat before:bg-position-[top_center,bottom_center] before:bg-size-[1400px] font-inter text-[#22242C] dark:text-white">
       <div className="max-w-2xl mx-auto px-4 py-16 md:py-24">
         {/* Back */}
         <Link

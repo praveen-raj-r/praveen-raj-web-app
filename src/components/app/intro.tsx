@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogContent,
   DialogOverlay,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Github, Instagram, Linkedin } from "lucide-react";
@@ -37,6 +38,7 @@ const Intro = ({
                   </DialogTrigger>
                   <DialogOverlay className="fixed inset-0 dark:bg-black/40 bg-white/40 backdrop-blur-md" />
                   <DialogContent className="bg-transparent border-none [&>button]:hidden shadow-none">
+                    <DialogTitle className="sr-only">Praveen Raj — profile photo</DialogTitle>
                     <img src="/praveen-raj-crop.png" className="rounded-full" />
                   </DialogContent>
                 </Dialog>

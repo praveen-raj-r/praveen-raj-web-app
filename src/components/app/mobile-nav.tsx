@@ -10,6 +10,7 @@ const navItems = [
   { id: "tech-stack", label: "tech stack" },
   { id: "resume", label: "resume" },
   { id: "contact", label: "contact" },
+  { id: "/blog", label: "writing" },
 
   { id: "https://www.linkedin.com/in/praveenraj-sde/", label: "Linkedin" },
   { id: "https://github.com/praveen-raj-r", label: "Github" },
@@ -39,26 +40,27 @@ const MobileNav = () => {
         </div>
       </DrawerTrigger>
 
-      <DrawerContent className="h-full p-0 bg-[#ffffff4d] dark:bg-[#120c1b4d] backdrop-blur-[74px] overflow-hidden max-w-[250px]">
+      <DrawerContent className="h-full p-0 bg-[#ffffff4d] dark:bg-[#120c1b4d] backdrop-blur-[74px] overflow-hidden max-w-62.5">
         {/* ✅ Close button */}
         <div
           onClick={() => setIsOpen(false)}
-          className="pt-[45px] pr-14 ml-auto cursor-pointer"
+          className="pt-11.25 pr-14 ml-auto cursor-pointer"
         >
           <HamBurgerMenu isOpen={isOpen} />
         </div>
 
         {/* ✅ Links */}
-        <ul className="flex flex-col items-end pr-10 py-[55px] h-full gap-4">
+        <ul className="flex flex-col items-end pr-10 py-13.75 h-full gap-4">
           {navItems.map((item) => {
             const isExternal = item.id.startsWith("http");
+            const isLink = isExternal || item.id.startsWith("/");
 
             return (
               <li
                 key={item.label}
                 className="text-2xl lowercase font-normal dark:text-white text-[#22242C]"
               >
-                {isExternal ? (
+                {isLink ? (
                   <a
                     href={item.id}
                     target={isExternal ? "_blank" : "_self"}

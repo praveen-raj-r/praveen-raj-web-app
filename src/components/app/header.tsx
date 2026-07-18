@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Logo from "./logo";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
@@ -12,12 +13,13 @@ const Header = () => {
 
   const [activeSection, setActiveSection] = useState("projects");
 
-  const navItems = [
+  const navItems: Array<{ id?: string; href?: string; label: string }> = [
     { id: "projects", label: "projects" },
     { id: "timeline", label: "timeline" },
     { id: "tech-stack", label: "tech stack" },
     { id: "resume", label: "resume" },
     { id: "contact", label: "contact" },
+    { href: "/blog", label: "writing" },
   ];
 
   const scrollToTop = () => {
@@ -54,6 +56,7 @@ const Header = () => {
     );
 
     navItems.forEach((item) => {
+      if (!item.id) return;
       const section = document.getElementById(item.id);
       if (section) observer.observe(section);
     });
@@ -73,18 +76,27 @@ const Header = () => {
           <div className="hidden min-[708px]:flex items-center max-h-10 ml-2 relative">
             <ul className="hidden min-[708px]:flex gap-3">
               {navItems.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => handleScroll(item.id)}
-                    className={cn(
-                      "text-sm capitalize font-semibold transition-all duration-300 text-nowrap cursor-pointer",
-                      activeSection === item.id
-                        ? "text-[#22242C] dark:text-white opacity-100"
-                        : "dark:text-white/50 dark:hover:text-white text-[#22242C]/50 hover:text-[#22242C]",
-                    )}
-                  >
-                    {item.label}
-                  </button>
+                <li key={item.id ?? item.href}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="text-sm capitalize font-semibold transition-all duration-300 text-nowrap dark:text-white/50 dark:hover:text-white text-[#22242C]/50 hover:text-[#22242C]"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleScroll(item.id!)}
+                      className={cn(
+                        "text-sm capitalize font-semibold transition-all duration-300 text-nowrap cursor-pointer",
+                        activeSection === item.id
+                          ? "text-[#22242C] dark:text-white opacity-100"
+                          : "dark:text-white/50 dark:hover:text-white text-[#22242C]/50 hover:text-[#22242C]",
+                      )}
+                    >
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

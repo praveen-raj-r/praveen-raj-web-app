@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import FooterTag from "@/components/app/footer-tag";
 
 const Footer = () => {
@@ -21,7 +22,7 @@ const Footer = () => {
 
   return (
     <div className="mt-25">
-      <div className="max-w-[708px] mx-auto relative items-center">
+      <div className="max-w-177 mx-auto relative items-center">
         <div className="p-4 flex flex-col justify-center text-center relative">
           {/* ✅ Copyright */}
           <div className="py-1 px-0">
@@ -49,6 +50,14 @@ const Footer = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/blog"
+                  className="px-2 block text-[13px] font-normal cursor-pointer opacity-80 dark:text-white hover:opacity-100 transition"
+                >
+                  Writing
+                </Link>
+              </li>
             </ul>
 
             {/* ✅ Footer Tech Text */}
