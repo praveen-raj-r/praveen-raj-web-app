@@ -1,21 +1,57 @@
-import timelines, { badgeStyles } from "@/data/timelines";
+import { createServerSupabaseClient } from "@/lib/supabase-server";
+import { badgeStyles } from "@/data/timelines";
 import DesignedHeading from "@/components/app/designed-heading";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
 
-const Timeline = () => {
+type TimelineRow = {
+  id: string;
+  title: string;
+  start_date: string;
+  end_date: string | null;
+  is_current: boolean;
+  description: string | null;
+  labels: { text: string; class: string }[];
+  github: string | null;
+  link: string | null;
+};
+
+const Timeline = async () => {
+  const supabase = createServerSupabaseClient();
+  const { data } = await supabase
+    .from("portfolio_timeline")
+    .select(
+      "id, title, start_date, end_date, is_current, description, labels, github, link",
+    )
+    .order("sort_order", { ascending: false });
+
+  const timelines = (data ?? []).map((item: TimelineRow) => ({
+    range: item.is_current
+      ? `${item.start_date} – Present`
+      : item.end_date
+        ? `${item.start_date} – ${item.end_date}`
+        : item.start_date,
+    label: item.labels ?? [],
+    title: item.title,
+    desc: item.description ?? "",
+    github: item.github ?? undefined,
+    link: item.link ?? undefined,
+  }));
+
+  if (timelines.length === 0) return null;
+
   return (
     <div id="timeline" className="mt-4 md:mt-10 py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-[708px] w-full mx-auto px-2 md:px-0">
+      <div className="relative items-center max-w-177 w-full mx-auto px-2 md:px-0">
         <div>
           <DesignedHeading
             heading="Timeline"
-            description={`This is my story in milestones — from first sparks of curiosity to real projects on the web. For more updates and the longer version, you’ll find me on LinkedIn `}
+            description={`This is my story in milestones — from first sparks of curiosity to real projects on the web. For more updates and the longer version, you'll find me on LinkedIn `}
           />
 
           <div className="p-4 md:p-0 md:pt-15">
             <div>
-              {[...timelines].reverse().map((timeline, index) => {
+              {timelines.map((timeline, index) => {
                 return (
                   <div
                     key={timeline.desc}
@@ -24,7 +60,7 @@ const Timeline = () => {
                     <div className="flex md:flex-row flex-col justify-center">
                       <div
                         className={cn(
-                          "min-w-[100px] mr-5 max-md:translate-y-1 -translate-y-1.5 max-md:border-l border-[#22242c26] dark:border-[#ecedee26]",
+                          "min-w-25 mr-5 max-md:translate-y-1 -translate-y-1.5 max-md:border-l border-[#22242c26] dark:border-[#ecedee26]",
                           index === timelines.length - 1 && "border-0!",
                         )}
                       >
@@ -34,9 +70,9 @@ const Timeline = () => {
                       </div>
                       <div
                         className={cn(
-                          "relative w-[420px] pl-4 pb-8 border-l border-[#22242c26] dark:border-[#ecedee26] max-md:w-full before:content-[''] before:absolute before:block before:w-2.5 before:h-2.5 before:-left-1.5 before:-top-0.5 before:rounded-[12px] before:border before:border-[#22242c26] dark:before:border-[#ecedee26] before:bg-[linear-gradient(270deg,#c3c1ff_0%,#a2c1ff_100%)] max-md:before:-top-[15px]",
+                          "relative w-105 pl-4 pb-8 border-l border-[#22242c26] dark:border-[#ecedee26] max-md:w-full before:content-[''] before:absolute before:block before:w-2.5 before:h-2.5 before:-left-1.5 before:-top-0.5 before:rounded-[12px] before:border before:border-[#22242c26] dark:before:border-[#ecedee26] before:bg-[linear-gradient(270deg,#c3c1ff_0%,#a2c1ff_100%)] max-md:before:-top-3.75",
                           index === timelines.length - 1 &&
-                            "pb-0! border-0 before:-left-[5px]",
+                            "pb-0! border-0 before:-left-1.25",
                         )}
                       >
                         <div className="relative">
