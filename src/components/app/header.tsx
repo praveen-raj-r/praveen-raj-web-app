@@ -73,8 +73,8 @@ const Header = () => {
           <Logo onClick={scrollToTop} />
 
           {/* ✅ Desktop Nav */}
-          <div className="hidden min-[708px]:flex items-center max-h-10 ml-2 relative">
-            <ul className="hidden min-[708px]:flex gap-3">
+          <div className="hidden min-[748px]:flex items-center max-h-10 ml-2 relative">
+            <ul className="hidden min-[748px]:flex gap-3">
               {navItems.map((item) => (
                 <li key={item.id ?? item.href}>
                   {item.href ? (
