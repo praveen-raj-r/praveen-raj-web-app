@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import techStacks, { badgeStyles } from "@/data/tech-stack";
@@ -197,15 +198,20 @@ const SkillItem = ({
               )}
               src="/tech-stack-item-bg.svg"
               alt=""
+              width={96}
+              height={96}
             />
           </span>
-          <img
+          <Image
             className={cn(
-              "absolute inset-0 box-border p-0 border-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full ",
+              "absolute inset-0 box-border p-0 border-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full",
               isGrid ? "rounded-xl" : "rounded-[12px]",
             )}
             src={item.img}
-            alt=""
+            alt={item.name}
+            width={60}
+            height={60}
+            sizes="60px"
           />
         </span>
       </div>
