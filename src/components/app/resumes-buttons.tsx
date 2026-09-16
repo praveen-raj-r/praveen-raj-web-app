@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Copy, Download, ExternalLink } from "lucide-react";
+import { Copy, Download, ExternalLink, Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 
 type Props = { url: string; filename: string };
 
 const ResumesButtons = ({ url, filename }: Props) => {
+  const [downloading, setDownloading] = useState(false);
+
   const handleAction = async (label: string) => {
     switch (label) {
       case "Download Resume": {
@@ -18,16 +21,24 @@ const ResumesButtons = ({ url, filename }: Props) => {
           return;
         }
 
-        const response = await fetch(downloadUrl);
-        const blob = await response.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = blobUrl;
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(blobUrl);
+        setDownloading(true);
+        try {
+          const response = await fetch(downloadUrl);
+          if (!response.ok) throw new Error("Download failed");
+          const blob = await response.blob();
+          const blobUrl = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = blobUrl;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(blobUrl);
+        } catch {
+          toast.error("Download failed — try again");
+        } finally {
+          setDownloading(false);
+        }
         break;
       }
 
@@ -50,36 +61,48 @@ const ResumesButtons = ({ url, filename }: Props) => {
     }
   };
 
+  const buttons = [
+    {
+      label: "Download Resume",
+      icon: downloading ? Loader2 : Download,
+      iconClass: downloading ? "animate-spin" : "",
+      className: "from-[#c3c2ff] to-[#9dbeff] text-[#1c309d]",
+      disabled: downloading,
+    },
+    {
+      label: "View Resume",
+      icon: ExternalLink,
+      iconClass: "",
+      className: "from-[#f0d6ff] to-[#d3cdff] text-[#5c1bae]",
+      disabled: false,
+    },
+    {
+      label: "Copy Resume Link",
+      icon: Copy,
+      iconClass: "",
+      className: "from-[#fbceff] to-[#ffd1d1] text-[#d000a6]",
+      disabled: false,
+    },
+  ];
+
   return (
     <div id="resume" className="scroll-mt-40">
-      <div className="max-w-177 w-full mx-auto relative items-center md:px-0 px-2">
+      <div className="max-w-200 w-full mx-auto relative items-center md:px-0 px-2">
         <div className="px-4 md:pb-0 pb-1">
           <ul className="flex flex-wrap items-center gap-2 mb-6">
-            {[
-              {
-                label: "Download Resume",
-                icon: Download,
-                className: "from-[#c3c2ff] to-[#9dbeff] text-[#1c309d]",
-              },
-              {
-                label: "View Resume",
-                icon: ExternalLink,
-                className: "from-[#f0d6ff] to-[#d3cdff] text-[#5c1bae]",
-              },
-              {
-                label: "Copy Resume Link",
-                icon: Copy,
-                className: "from-[#fbceff] to-[#ffd1d1] text-[#d000a6]",
-              },
-            ].map((item) => {
+            {buttons.map((item) => {
               const Icon = item.icon;
               return (
                 <li key={item.label}>
                   <button
                     onClick={() => handleAction(item.label)}
+                    disabled={item.disabled}
                     className={cn(
-                      "group relative flex items-center gap-2 px-2 md:py-2 py-1 rounded-full font-medium cursor-pointer transition-all duration-300",
-                      "border dark:border-white/10 bg-[#22242c]/5 dark:bg-white/5 text-[#22242c] dark:text-white backdrop-blur shadow-[0_0_0_1px_#ffffffc] transition-all duration-300 hover:bg-[#22242c]/10 dark:hover:bg-white/10 border-[#22242c]/10 hover:border-[#22242c]/20 dark:hover:border-white/20",
+                      "group relative flex items-center gap-2 px-2 md:py-2 py-1 rounded-full font-medium transition-all duration-300",
+                      "border dark:border-white/10 bg-[#22242c]/5 dark:bg-white/5 text-[#22242c] dark:text-white backdrop-blur shadow-[0_0_0_1px_#ffffffc] hover:bg-[#22242c]/10 dark:hover:bg-white/10 border-[#22242c]/10 hover:border-[#22242c]/20 dark:hover:border-white/20",
+                      item.disabled
+                        ? "cursor-not-allowed opacity-70"
+                        : "cursor-pointer",
                     )}
                   >
                     <a
@@ -88,10 +111,17 @@ const ResumesButtons = ({ url, filename }: Props) => {
                         item.className,
                       )}
                     >
-                      <Icon className="size-3.5 opacity-90 group-hover:opacity-100 transition-opacity" />
+                      <Icon
+                        className={cn(
+                          "size-3.5 opacity-90 group-hover:opacity-100 transition-opacity",
+                          item.iconClass,
+                        )}
+                      />
                     </a>
                     <span className="relative flex items-center gap-2 text-sm tracking-wide">
-                      {item.label}
+                      {item.label === "Download Resume" && downloading
+                        ? "Downloading…"
+                        : item.label}
                     </span>
                   </button>
                 </li>

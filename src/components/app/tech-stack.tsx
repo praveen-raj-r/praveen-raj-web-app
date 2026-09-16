@@ -11,7 +11,7 @@ import { Dialog, DialogContent } from "../ui/dialog";
 const TechStack = () => {
   return (
     <div id="tech-stack" className="mt-4 md:mt-10 py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-177 w-full mx-auto px-2 md:px-0">
+      <div className="relative items-center max-w-200 w-full mx-auto px-2 md:px-0">
         <div>
           <DesignedHeading
             heading="Tech Stack"

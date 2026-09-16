@@ -22,7 +22,7 @@ const Intro = ({
   return (
     <>
       <div className="mt-5 px-0 pt-4">
-        <div className="max-w-177 w-full mx-auto relative items-center py-0 md:px-0 px-2">
+        <div className="max-w-200 w-full mx-auto relative items-center py-0 md:px-0 px-2">
           <div className="px-4 md:pt-4 md:pb-0 pt-1 pb-1">
             <div>
               <h2 className="text-4xl md:text-[56px] font-light tracking-[-1.5px] md:tracking-[-2.5px] leading-8.5 md:leading-13.5 max-w-160 font-Fraunces">
@@ -55,7 +55,7 @@ const Intro = ({
         </div>
       </div>
       <div className="pb-12">
-        <div className="max-w-177 w-full mx-auto relative items-center py-0 md:px-0 px-2">
+        <div className="max-w-200 w-full mx-auto relative items-center py-0 md:px-0 px-2">
           <div className="px-4 md:pb-0 pb-1">
             <div>
               {availabilityVisible && (
