@@ -2,7 +2,7 @@ import { createServerSupabaseClient } from "@/lib/supabase-server";
 import LandingPage from "@/views/landing-page";
 import type { SectionConfig, ContentConfig } from "@/types/site-config";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300; // revalidate site config every 5 minutes
 
 const DEFAULT_SECTIONS: SectionConfig = {
   intro: true,

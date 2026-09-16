@@ -8,7 +8,13 @@ import type { Metadata } from "next";
 import Texture from "@/components/app/texture";
 import ViewTracker from "@/components/app/view-tracker";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const { getAllPosts } = await import("@/lib/blog");
+  const posts = await getAllPosts();
+  return posts.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({
   params,

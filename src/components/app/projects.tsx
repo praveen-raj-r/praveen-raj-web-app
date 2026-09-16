@@ -1,3 +1,5 @@
+import { unstable_cache } from "next/cache";
+import Image from "next/image";
 import { createServerSupabaseClient } from "@/lib/supabase-server";
 import DesignedHeading from "@/components/app/designed-heading";
 import { ArrowUpRight } from "lucide-react";
@@ -12,14 +14,21 @@ type ProjectRow = {
   link: string | null;
 };
 
-const Projects = async () => {
-  const supabase = createServerSupabaseClient();
-  const { data } = await supabase
-    .from("portfolio_projects")
-    .select("id, title, description, image_url, featured, year, link")
-    .order("sort_order", { ascending: true });
+const fetchProjects = unstable_cache(
+  async () => {
+    const supabase = createServerSupabaseClient();
+    const { data } = await supabase
+      .from("portfolio_projects")
+      .select("id, title, description, image_url, featured, year, link")
+      .order("sort_order", { ascending: true });
+    return data ?? [];
+  },
+  ["portfolio-projects"],
+  { revalidate: 3600, tags: ["projects"] },
+);
 
-  const projects = data ?? [];
+const Projects = async () => {
+  const projects = await fetchProjects();
 
   if (projects.length === 0) return null;
 
@@ -44,11 +53,16 @@ const Projects = async () => {
                 <div className="group relative cursor-pointer mb-3 flex flex-col items-center gap-4 px-3 py-8 rounded-[20px] dark:bg-[#191920e6] bg-[#f5f5f599] overflow-hidden">
                   {/* IMAGE LAYER */}
                   <div className="relative w-full z-10 transition-all duration-500 ease-out group-hover:blur-md group-hover:scale-110 group-hover:opacity-40">
-                    <img
-                      className="size-25 mx-auto rounded-[18px] shadow-[0px_2.9px_5.7px_#00000033,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000026,0px_37.1px_15px_#000000c] dark:shadow-[0px_2.9px_5.7px_#0000004c,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000033,0px_37.1px_15px_#00000033]"
-                      src={project.image_url ?? ""}
-                      alt=""
-                    />
+                    {project.image_url && (
+                      <Image
+                        className="size-25 mx-auto rounded-[18px] shadow-[0px_2.9px_5.7px_#00000033,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000026,0px_37.1px_15px_#000000c] dark:shadow-[0px_2.9px_5.7px_#0000004c,0px_8.6px_8.6px_#00000033,0px_21.4px_13px_#00000033,0px_37.1px_15px_#00000033]"
+                        src={project.image_url}
+                        alt={project.title}
+                        width={100}
+                        height={100}
+                        sizes="100px"
+                      />
+                    )}
                     {project.featured && (
                       <div className="absolute left-1/2 -top-2 -translate-x-1/2 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase text-white backdrop-blur-sm bg-[linear-gradient(90deg,#566cec,#d749af_50%,#ff7c51)]">
                         NEW

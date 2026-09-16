@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { createServerSupabaseClient } from "@/lib/supabase-server";
 import { badgeStyles } from "@/data/timelines";
 import DesignedHeading from "@/components/app/designed-heading";
@@ -16,14 +17,21 @@ type TimelineRow = {
   link: string | null;
 };
 
+const fetchTimeline = unstable_cache(
+  async () => {
+    const supabase = createServerSupabaseClient();
+    const { data } = await supabase
+      .from("portfolio_timeline")
+      .select("id, title, start_date, end_date, is_current, description, labels, github, link")
+      .order("sort_order", { ascending: false });
+    return data ?? [];
+  },
+  ["portfolio-timeline"],
+  { revalidate: 3600, tags: ["timeline"] },
+);
+
 const Timeline = async () => {
-  const supabase = createServerSupabaseClient();
-  const { data } = await supabase
-    .from("portfolio_timeline")
-    .select(
-      "id, title, start_date, end_date, is_current, description, labels, github, link",
-    )
-    .order("sort_order", { ascending: false });
+  const data = await fetchTimeline();
 
   const timelines = (data ?? []).map((item: TimelineRow) => ({
     range: item.is_current

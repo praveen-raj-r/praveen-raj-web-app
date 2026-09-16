@@ -33,6 +33,7 @@ const Intro = ({
                         src="/praveen-raj-crop-2.png"
                         className="size-9 md:size-16 rounded-full translate-y-1.5 border md:border-2 border-neutral-900 shadow-sm"
                         alt="Praveen Raj"
+                        fetchPriority="high"
                       />
                     </span>
                   </DialogTrigger>
