@@ -34,6 +34,8 @@ const Intro = ({
                         className="size-9 md:size-16 rounded-full translate-y-1.5 border md:border-2 border-neutral-900 shadow-sm"
                         alt="Praveen Raj"
                         fetchPriority="high"
+                        width={64}
+                        height={64}
                       />
                     </span>
                   </DialogTrigger>
