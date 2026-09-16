@@ -20,7 +20,8 @@ const fetchResume = unstable_cache(
 const Resumes = async () => {
   const resume = await fetchResume();
   if (!resume) return null;
-  return <ResumesButtons url={resume.url} filename={resume.filename} />;
+  // Proxy through /resume so the Supabase project URL is never exposed
+  return <ResumesButtons url="/resume" filename={resume.filename} />;
 };
 
 export default Resumes;

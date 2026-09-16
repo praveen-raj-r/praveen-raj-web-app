@@ -11,13 +11,14 @@ const ResumesButtons = ({ url, filename }: Props) => {
     switch (label) {
       case "Download Resume": {
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const downloadUrl = url.startsWith("/") ? `${url}?download` : url;
 
         if (isIOS) {
-          window.open(url, "_blank");
+          window.open(downloadUrl, "_blank");
           return;
         }
 
-        const response = await fetch(url);
+        const response = await fetch(downloadUrl);
         const blob = await response.blob();
         const blobUrl = URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -34,14 +35,18 @@ const ResumesButtons = ({ url, filename }: Props) => {
         window.open(url, "_blank", "noopener,noreferrer");
         break;
 
-      case "Copy Resume Link":
+      case "Copy Resume Link": {
+        const fullUrl = url.startsWith("/")
+          ? `${window.location.origin}${url}`
+          : url;
         try {
-          await navigator.clipboard.writeText(url);
+          await navigator.clipboard.writeText(fullUrl);
           toast.success("Resume link copied!");
         } catch {
-          toast.error(`Failed to copy: ${url}`);
+          toast.error("Failed to copy link");
         }
         break;
+      }
     }
   };
 
