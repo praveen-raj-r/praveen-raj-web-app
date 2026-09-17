@@ -55,6 +55,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.png" />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('vite-ui-theme');var d=!t||t==='system'?window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light':t;document.documentElement.classList.add(d)}catch(e){}})()` }} />
       </head>
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>
