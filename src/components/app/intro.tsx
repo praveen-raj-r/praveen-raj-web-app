@@ -43,11 +43,13 @@ const Intro = ({
                   </DialogTrigger>
                   <DialogOverlay className="fixed inset-0 dark:bg-black/40 bg-white/40 backdrop-blur-md" />
                   <DialogContent className="bg-transparent border-none [&>button]:hidden shadow-none">
-                    <DialogTitle className="sr-only">Praveen Raj — profile photo</DialogTitle>
+                    <DialogTitle className="sr-only">
+                      Praveen Raj — profile photo
+                    </DialogTitle>
                     <img src="/praveen-raj-crop.png" className="rounded-full" />
                   </DialogContent>
                 </Dialog>
-                Praveen Raj, <br /> a frontend engineer building modern,
+                Praveen Raj, <br /> a Frontend Engineer building modern,
                 high-performance digital experiences.
               </h2>
             </div>
