@@ -50,7 +50,7 @@ const Intro = ({
                   </DialogContent>
                 </Dialog>
                 Praveen Raj, <br /> a frontend engineer who builds complex,
-                interactive SaaS with real-time UIs and pixel-perfect systems.
+                interactive SaaS with real-time UIs and scalable design systems.
               </h2>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Intro = ({
                         rel="noopener noreferrer"
                         className="flex text-base cursor-pointer items-center gap-px sm:text-[#72788899] duration-300 hover:opacity-80 font-semibold dark:hover:text-white hover:text-[#000000]"
                       >
-                        <Icon className="size-4" />
+                        <Icon className="w-6 h-4" />
                         <span className="block">{name}</span>
                       </a>
                     </div>
