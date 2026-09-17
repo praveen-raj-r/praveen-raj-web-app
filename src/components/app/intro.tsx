@@ -22,10 +22,10 @@ const Intro = ({
   return (
     <>
       <div className="mt-5 px-0 pt-4">
-        <div className="max-w-200 w-full mx-auto relative items-center py-0 md:px-0 px-2">
-          <div className="px-4 md:pt-4 md:pb-0 pt-1 pb-1">
+        <div className="max-w-187 w-full mx-auto relative items-center py-0 md:px-0 px-2">
+          <div className="px-4 md:px-9.5 md:pt-4 md:pb-0 pt-1 pb-1">
             <div>
-              <h2 className="text-4xl md:text-[56px] font-light tracking-[-1.5px] md:tracking-[-2.5px] leading-8.5 md:leading-13.5 max-w-160 font-Fraunces">
+              <h2 className="text-4xl md:text-[56px] font-light tracking-[-1.5px] md:tracking-[-2.5px] leading-8.5 md:leading-13.5 max-w-200 font-Fraunces">
                 Hi <span className="animate-pulse">👋</span>, I’m
                 <Dialog>
                   <DialogTrigger className="cursor-pointer">
@@ -57,8 +57,8 @@ const Intro = ({
         </div>
       </div>
       <div className="pb-12">
-        <div className="max-w-200 w-full mx-auto relative items-center py-0 md:px-0 px-2">
-          <div className="px-4 md:pb-0 pb-1">
+        <div className="max-w-187 w-full mx-auto relative items-center py-0 md:px-0 px-2">
+          <div className="px-4 md:px-9.5 md:pb-0 pb-1">
             <div>
               {availabilityVisible && (
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20 mb-4">
@@ -93,14 +93,14 @@ const Intro = ({
                         rel="noopener noreferrer"
                         className="flex text-base cursor-pointer items-center gap-px sm:text-[#72788899] duration-300 hover:opacity-80 font-semibold dark:hover:text-white hover:text-[#000000]"
                       >
-                        <Icon className="w-6 h-4" />
+                        <Icon className="size-4" />
                         <span className="block">{name}</span>
                       </a>
                     </div>
                   );
                 })}
               </div>
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
                 I specialize in{" "}
                 <span className="font-semibold gradient sky-2">
                   React-based SPAs
@@ -115,7 +115,7 @@ const Intro = ({
                 that keep users engaged.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
                 I care about{" "}
                 <span className="font-semibold gradient retro-2">
                   browser fundamentals
@@ -129,7 +129,7 @@ const Intro = ({
                 satisfying to use.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
                 For me, great frontend is where{" "}
                 <span className="font-semibold gradient retro-2">
                   clean architecture

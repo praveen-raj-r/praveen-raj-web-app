@@ -87,8 +87,8 @@ const ResumesButtons = ({ url, filename }: Props) => {
 
   return (
     <div id="resume" className="scroll-mt-40">
-      <div className="max-w-200 w-full mx-auto relative items-center md:px-0 px-2">
-        <div className="px-4 md:pb-0 pb-1">
+      <div className="max-w-187 w-full mx-auto relative items-center md:px-0 px-2">
+        <div className="px-4 md:px-9.5 md:pb-0 pb-1">
           <ul className="flex flex-wrap items-center gap-2 mb-6">
             {buttons.map((item) => {
               const Icon = item.icon;
