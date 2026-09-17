@@ -49,8 +49,8 @@ const Intro = ({
                     <img src="/praveen-raj-crop.png" className="rounded-full" />
                   </DialogContent>
                 </Dialog>
-                Praveen Raj, <br /> a Frontend Engineer building modern,
-                high-performance digital experiences.
+                Praveen Raj, <br /> a frontend engineer who builds complex,
+                interactive SaaS with real-time UIs and pixel-perfect systems.
               </h2>
             </div>
           </div>
@@ -101,58 +101,46 @@ const Intro = ({
                 })}
               </div>
               <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
-                Hey! 👋 I’m Praveen Raj, a{" "}
+                I specialize in{" "}
                 <span className="font-semibold gradient sky-2">
-                  frontend engineer
+                  React-based SPAs
                 </span>{" "}
-                from Chennai who loves turning ideas into{" "}
+                where the details matter. I focus on{" "}
                 <span className="font-semibold gradient retro-2">
-                  pixel-perfect interfaces
+                  rich data views, real-time collaboration,
                 </span>{" "}
-                and{" "}
-                <span className="font-semibold gradient retro-2">
-                  smooth user experiences
-                </span>
-                .
+                and component systems built to scale. I’ve shipped SaaS products
+                from early-stage to production, taking full ownership of the
+                frontend: architecture, performance, and the small interactions
+                that keep users engaged.
               </p>
 
               <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
-                I build modern,{" "}
+                I care about{" "}
                 <span className="font-semibold gradient retro-2">
-                  Single Page Applications (SPAs), SaaS products, and Corporate
-                  websites, Dashboards
+                  browser fundamentals
                 </span>{" "}
-                that feel <span className="font-semibold">fast</span>,{" "}
+                like caching, storage, and compatibility, not just the framework layer.
+                Whether it’s a{" "}
                 <span className="font-semibold gradient dreamy-2">
-                  intuitive
-                </span>
-                , and crafted with intention.
+                  Kanban board, a live dashboard,
+                </span>{" "}
+                or a document editor, I build UIs that feel fast, reliable, and
+                satisfying to use.
               </p>
 
               <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
-                For me, great frontend isn’t just design. It’s{" "}
+                For me, great frontend is where{" "}
                 <span className="font-semibold gradient retro-2">
                   clean architecture
-                </span>
-                ,{" "}
-                <span className="font-semibold gradient retro-2">
-                  reusable components
-                </span>
-                , and{" "}
+                </span>{" "}
+                meets obsessive attention to{" "}
                 <span className="font-semibold gradient sky-3">
-                  scalable systems
-                </span>{" "}
-                that grow beautifully over time.
-              </p>
-
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-160">
-                From planning every detail to polishing the final interaction, I
-                focus on one thing: building{" "}
-                <span className="font-semibold gradient retro-3">
-                  web experiences
-                </span>{" "}
-                people genuinely{" "}
-                <span className="font-semibold">enjoy using</span>. ✨
+                  interaction detail
+                </span>
+                . I’m at my best in fast-paced teams where I can{" "}
+                <span className="font-semibold">ship, iterate,</span> and make
+                real impact. ✨
               </p>
             </div>
           </div>
