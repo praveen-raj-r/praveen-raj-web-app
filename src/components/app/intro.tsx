@@ -100,47 +100,33 @@ const Intro = ({
                   );
                 })}
               </div>
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
-                I specialize in{" "}
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px]">
+                My focus is the interactive, data-heavy parts of SaaS:{" "}
                 <span className="font-semibold gradient sky-2">
-                  React-based SPAs
+                  tables, Kanban boards, real-time feeds, form flows.
                 </span>{" "}
-                where the details matter. I focus on{" "}
-                <span className="font-semibold gradient retro-2">
-                  rich data views, real-time collaboration,
-                </span>{" "}
-                and component systems built to scale. I’ve shipped SaaS products
-                from early-stage to production, taking full ownership of the
-                frontend: architecture, performance, and the small interactions
-                that keep users engaged.
+                The UI users live in all day.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
-                I care about{" "}
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px]">
+                I dig into{" "}
                 <span className="font-semibold gradient retro-2">
-                  browser fundamentals
+                  browser behaviour
                 </span>{" "}
-                like caching, storage, and compatibility, not just the framework layer.
-                Whether it’s a{" "}
+                more than most. Stale cache, layout shifts, re-render issues. I
+                find the{" "}
                 <span className="font-semibold gradient dreamy-2">
-                  Kanban board, a live dashboard,
+                  root cause,
                 </span>{" "}
-                or a document editor, I build UIs that feel fast, reliable, and
-                satisfying to use.
+                not the workaround.
               </p>
 
-              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px] max-w-200">
-                For me, great frontend is where{" "}
-                <span className="font-semibold gradient retro-2">
-                  clean architecture
-                </span>{" "}
-                meets obsessive attention to{" "}
+              <p className="text-lg md:text-xl leading-[140%] font-normal my-4 mx-0 tracking-[-0.28px]">
+                Looking for a team that ships{" "}
                 <span className="font-semibold gradient sky-3">
-                  interaction detail
-                </span>
-                . I’m at my best in fast-paced teams where I can{" "}
-                <span className="font-semibold">ship, iterate,</span> and make
-                real impact. ✨
+                  real product
+                </span>{" "}
+                and sweats the details. That’s where I do my best work. ✨
               </p>
             </div>
           </div>
