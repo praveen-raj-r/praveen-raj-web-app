@@ -41,10 +41,10 @@ const Projects = async () => {
             description="These projects are little highlights of my journey built with curiosity, care, and a lot of late-night coding. Feel free to explore."
           />
 
-          <div className="relative grid grid-cols-2 md:grid-cols-3 gap-2.5 md:gap-3.5 mt-1.5 p-1">
+          <div className="relative flex flex-wrap justify-center gap-2.5 md:gap-3.5 mt-1.5 p-1">
             {projects.map((project: ProjectRow) => (
               <a
-                className="text-[#ecedee] cursor-pointer block"
+                className="w-[calc(50%-5px)] md:w-[calc(33.333%-10px)] text-[#ecedee] cursor-pointer block"
                 href={project.link ?? undefined}
                 target="_blank"
                 rel="noreferrer"
