@@ -91,7 +91,7 @@ const Intro = ({
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex text-base cursor-pointer items-center gap-px sm:text-[#72788899] duration-300 hover:opacity-80 font-semibold dark:hover:text-white hover:text-[#000000]"
+                        className="flex text-base cursor-pointer items-center gap-px sm:text-[#c7d0e799] duration-300 hover:opacity-80 font-semibold dark:hover:text-white hover:text-[#000000]"
                       >
                         <Icon className="w-6 h-4" />
                         <span className="block">{name}</span>
