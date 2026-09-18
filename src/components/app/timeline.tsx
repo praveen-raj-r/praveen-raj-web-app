@@ -50,7 +50,7 @@ const Timeline = async () => {
 
   return (
     <div id="timeline" className="mt-4 md:mt-10 py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-177 w-full mx-auto px-2 md:px-0">
+      <div className="relative items-center max-w-187 w-full mx-auto px-4 md:px-9.5">
         <div>
           <DesignedHeading
             heading="Timeline"

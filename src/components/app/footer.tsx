@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <div className="mt-25">
-      <div className="max-w-177 mx-auto relative items-center">
+      <div className="max-w-187 mx-auto relative items-center">
         <div className="p-4 flex flex-col justify-center text-center relative">
           {/* ✅ Copyright */}
           <div className="py-1 px-0">

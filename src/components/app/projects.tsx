@@ -1,5 +1,6 @@
 import { unstable_cache } from "next/cache";
 import Image from "next/image";
+import Link from "next/link";
 import { createServerSupabaseClient } from "@/lib/supabase-server";
 import DesignedHeading from "@/components/app/designed-heading";
 import { ArrowUpRight } from "lucide-react";
@@ -34,7 +35,7 @@ const Projects = async () => {
 
   return (
     <div id="projects" className="py-4 px-0 scroll-mt-40">
-      <div className="relative items-center max-w-177 w-full mx-auto px-2 sm:px-0">
+      <div className="relative items-center max-w-187 w-full mx-auto px-4 md:px-9.5">
         <div>
           <DesignedHeading
             heading="Projects"
@@ -43,11 +44,9 @@ const Projects = async () => {
 
           <div className="relative flex flex-wrap justify-center gap-2.5 md:gap-3.5 mt-1.5 p-1">
             {projects.map((project: ProjectRow) => (
-              <a
+              <Link
                 className="w-[calc(50%-5px)] md:w-[calc(33.333%-10px)] text-[#ecedee] cursor-pointer block"
-                href={project.link ?? undefined}
-                target="_blank"
-                rel="noreferrer"
+                href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                 key={project.id}
               >
                 <div className="group relative cursor-pointer mb-3 flex flex-col items-center gap-4 px-3 py-8 rounded-[20px] dark:bg-[#191920e6] bg-[#f5f5f599] overflow-hidden">
@@ -99,7 +98,7 @@ const Projects = async () => {
                 <div className="md:hidden flex flex-col justify-center items-center text-center px-3 dark:text-white text-[#22242C]">
                   <p className="line-clamp-3 text-xs">{project.description}.</p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
